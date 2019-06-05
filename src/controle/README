@@ -1,0 +1,51 @@
+Ultimos registros de desenvolvimento:
+
+Módulo produto;
+O form entrada de produto tem que ser dividido em movel e MP;ok
+-foi necessário adicionar alguns campos de caracteristicas do produto para melhor detalhamento do produto, MARCA E COR PREDOMINANTE.
+-desnecessário referenciar a materia prima utilizada para construcao do Móvel, foi retirada.
+-a classe Dao tambem foi alterada
+Falta o form MP; ok
+
+Módulo Funcionario;ok
+Falta o form do funcionario; ok
+Atualizar a tela inicial do funcionário de acordo com o tipo de funcionario, modificar o daologin para tratar o acesso de funcionarios
+Solucionar problemas no metodo atualizaUsuario() no daoFuncionario... adequar no daoLogin -> ver necessidade
+
+Módulo de producao;ok
+Pesquisar Produto;ok
+
+
+Módulo Empresa; ok falta restante do crud
+Cliente  
+Fornecedor
+
+Módulo Vendas;
+Vender ok Ainda falta add quantidade
+Pesquisar Produto ok
+Registrar compras ok
+
+
+
+Módulo Relatórios;
+
+
+
+Módulo de Configuracao;
+mostrar ao iniciar
+Alterar usuario sql
+Alterar caminho do Banco
+
+
+
+obs:
+1 - Com a análise da estrutura de acesso, foi necessário criar uma tabela de controle.
+
+2 - Evitou-se o uso de acentuaçao, por ter sido desenvolvido em um sistema operacional linux, 
+para evitar a incompatibilidade ao tentar compilar o codigo em outro sistema operacional.
+
+
+
+SQL:
+seleciona o funcionario.gerente que esta no controle
+SELECT gerente.CPF FROM gerente join controle on gerente.CPF = controle.gerente_CPF;
