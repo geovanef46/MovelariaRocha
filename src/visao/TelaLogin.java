@@ -45,7 +45,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jTextFieldLogin = new javax.swing.JTextField();
         jLabelFundoLogin = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Login");
         getContentPane().setLayout(null);
 
@@ -73,17 +73,17 @@ public class TelaLogin extends javax.swing.JFrame {
         getContentPane().add(jLabelSenha);
         jLabelSenha.setBounds(370, 160, 50, 30);
 
-        jPasswordFieldSenha.setToolTipText("Digite a senha com no mínimo 8 digitos!");
+        jPasswordFieldSenha.setToolTipText("Digite a sua senha");
         getContentPane().add(jPasswordFieldSenha);
         jPasswordFieldSenha.setBounds(430, 160, 200, 30);
 
         jLabelLogin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabelLogin.setText("Login");
+        jLabelLogin.setText("Nome");
         jLabelLogin.setToolTipText("Nome de Usuário");
         getContentPane().add(jLabelLogin);
         jLabelLogin.setBounds(370, 130, 50, 30);
 
-        jTextFieldLogin.setToolTipText("Digite o nome de usuário");
+        jTextFieldLogin.setToolTipText("Digite o seu primeiro nome");
         jTextFieldLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldLoginActionPerformed(evt);
@@ -117,6 +117,7 @@ public class TelaLogin extends javax.swing.JFrame {
           }else{
               
           limparCampos();
+          
           }
       }else{
           JOptionPane.showMessageDialog(rootPane, "Preencha os campos Corretamente!");
@@ -124,15 +125,19 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAcessarActionPerformed
     
     private boolean campoVazio(){
-     if(jPasswordFieldSenha.getPassword().length <= 5 || jTextFieldLogin.getText().equals("")){
+     if(jPasswordFieldSenha.getPassword().length < 5 || jTextFieldLogin.getText().equals("")){
+         jTextFieldLogin.requestFocus();
          return true;
      }
-        return false;   
+   
+     return false;
+        
     }
     
     private void limparCampos(){
         jTextFieldLogin.setText("");
         jPasswordFieldSenha.setText("");
+        jTextFieldLogin.requestFocus();
     }
     
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed

@@ -232,7 +232,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(5, 5, 19));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/relatorio.png"))); // NOI18N
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(-10, 30, 170, 190);
+        jLabel5.setBounds(20, 30, 150, 190);
 
         jPanelInterno.add(jPanel2);
         jPanel2.setBounds(550, 10, 190, 320);
