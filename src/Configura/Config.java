@@ -14,7 +14,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -63,25 +62,33 @@ public class Config {
     public void imprimeJson(){
         if(config_json != null){
         
-        System.out.println("Caminho = "+ config_json.getJSONObject("config").getString("caminho"));
-        String str =  "{'senha':'root','bd':'movelariaRocha','usuario':'root','caminho':'localhost:3306'}";
-      
-        config_json = criaNewJson(config_json,str);
-        
-        System.out.println("Nova Config = "+ config_json.getString("novaConfig"));
+        System.out.println("\n Config Padrão= "+ config_json.getJSONObject("config").toString());
+        System.out.println("Ultima Config = "+ config_json.getJSONObject("novaConfig").getString("senha"));
         
        salvarJson();
         }else{
+            recebeDados();
             System.out.println("Arquivo de inicialização não encontrado!");
         }
     }
+    
+    public void recebeDados(){
+        String str =  "{'senha':'root2','bd':'movelariaRocha2','usuario':'root2','caminho':'localhost:3306'}";
+      
+        config_json = criaNewJson(config_json,str);
+        
+        System.out.println("Nova Config = "+ config_json.getJSONObject("novaConfig").toString());//JSONObject.toString
+        
+    }
     public void salvarJson(){
+        System.out.println("Salvando dados...");
         try {
                      
             BufferedWriter Bwrite = new BufferedWriter(new FileWriter("src/Configura/Config.json"));
             //Escreve no arquivo conteudo do Objeto JSON
             Bwrite.write(config_json.toString());
             Bwrite.close();
+            System.out.println("Dados Salvos!");
         } catch (IOException ex) {
             Logger.getLogger(Config.class.getName()).log(Level.SEVERE, null, ex);
         }
