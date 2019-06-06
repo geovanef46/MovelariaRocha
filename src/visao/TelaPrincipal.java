@@ -85,11 +85,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuRelatorios = new javax.swing.JMenu();
         jMenuFerramentas = new javax.swing.JMenu();
         jMenuItemBemVindo = new javax.swing.JMenuItem();
-        jMenuSair = new javax.swing.JMenu();
+        jMenuSobre = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("ADMINISTRADOR");
         setBackground(new java.awt.Color(255, 255, 255));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                FechouJanelaPrincipal(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         jInternalFrameBemVindo.setBackground(new java.awt.Color(220, 222, 228));
@@ -202,7 +207,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Crystal_Clear_app_Login_Manager.png"))); // NOI18N
         jLabel3.setText("  ");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(30, 40, 160, 260);
+        jLabel3.setBounds(30, 70, 150, 190);
 
         jPanelInterno.add(jPanel1);
         jPanel1.setBounds(360, 10, 190, 320);
@@ -232,7 +237,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(5, 5, 19));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/relatorio.png"))); // NOI18N
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(20, 30, 150, 190);
+        jLabel5.setBounds(20, 50, 150, 160);
 
         jPanelInterno.add(jPanel2);
         jPanel2.setBounds(550, 10, 190, 320);
@@ -319,13 +324,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuFerramentas);
 
-        jMenuSair.setText("Sair");
-        jMenuSair.addMouseListener(new java.awt.event.MouseAdapter() {
+        jMenuSobre.setText("Sobre");
+        jMenuSobre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenuSairMouseClicked(evt);
+                jMenuSobreMouseClicked(evt);
             }
         });
-        jMenuBar1.add(jMenuSair);
+        jMenuBar1.add(jMenuSobre);
 
         setJMenuBar(jMenuBar1);
 
@@ -333,10 +338,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuSairMouseClicked
+    private void jMenuSobreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuSobreMouseClicked
         //conecta.desconecta();//caso exista alguma conexão aberta
-        System.exit(0);
-    }//GEN-LAST:event_jMenuSairMouseClicked
+      
+    }//GEN-LAST:event_jMenuSobreMouseClicked
 
     private void jMenuItemBemVindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBemVindoActionPerformed
         jInternalFrameBemVindo.setFocusable(true);
@@ -432,6 +437,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAdicionarLojaActionPerformed
 
+    private void FechouJanelaPrincipal(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_FechouJanelaPrincipal
+        TelaLogin.tela.setVisible(true);
+    }//GEN-LAST:event_FechouJanelaPrincipal
+
     /**
      * @param args the command line arguments
      */
@@ -499,7 +508,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemNovoProduto;
     private javax.swing.JMenuItem jMenuItemPesquisar;
     private javax.swing.JMenu jMenuRelatorios;
-    private javax.swing.JMenu jMenuSair;
+    private javax.swing.JMenu jMenuSobre;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

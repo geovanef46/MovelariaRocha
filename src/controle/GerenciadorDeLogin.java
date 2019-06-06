@@ -5,6 +5,7 @@
  */
 package controle;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modeloBeans.funcionario.BeansFuncionario;
 import modeloBeans.funcionario.BeansGerente;
@@ -27,6 +28,9 @@ public class GerenciadorDeLogin {
     private DaoFuncionario daoFunc = new DaoFuncionario();
     private BeansUsuario usuario;
     private static GerenciadorDeLogin unicaInstancia;
+    TelaPrincipal telaprincipalAdmin;
+    TelaPrincipalOpProd telaprincipalOP;
+    TelaPrincipalVendedor telaprincipalVend;
 
     
     private GerenciadorDeLogin(){
@@ -61,19 +65,34 @@ public class GerenciadorDeLogin {
         String tipo = this.usuario.getTipoUsuario();
 
         if (tipo.equals(getFuncionarioAtivo().ADMINISTRADOR)) {
-            TelaPrincipal telaprincipal = new TelaPrincipal(getFuncionarioAtivo());
-            telaprincipal.setVisible(true);
-            telaprincipal.setResizable(false);
+            if(telaprincipalAdmin == null){
+            telaprincipalAdmin = new TelaPrincipal(getFuncionarioAtivo());
+            telaprincipalAdmin.setVisible(true);
+            telaprincipalAdmin.setResizable(false);
+            }else{
+                telaprincipalAdmin.setVisible(true);
+                telaprincipalAdmin.setResizable(false); 
+            }
         }
         if (tipo.equals(getFuncionarioAtivo().VENDEDOR)) {
-            TelaPrincipalVendedor telaprincipal = new TelaPrincipalVendedor(getFuncionarioAtivo());
-            telaprincipal.setVisible(true);
-            telaprincipal.setResizable(false);
+            if(telaprincipalVend == null){
+             telaprincipalVend = new TelaPrincipalVendedor(getFuncionarioAtivo());
+            telaprincipalVend.setVisible(true);
+            telaprincipalVend.setResizable(false);
+            }else{
+                telaprincipalVend.setVisible(true);
+                telaprincipalVend.setResizable(false);
+            }
         }
         if (tipo.equals(getFuncionarioAtivo().OP_PRODUCAO)) {
-            TelaPrincipalOpProd telaprincipal = new TelaPrincipalOpProd(getFuncionarioAtivo());
-            telaprincipal.setVisible(true);
-            telaprincipal.setResizable(false);
+            if(telaprincipalOP == null){
+             telaprincipalOP = new TelaPrincipalOpProd(getFuncionarioAtivo());
+            telaprincipalOP.setVisible(true);
+            telaprincipalOP.setResizable(false);
+            }else{
+                telaprincipalOP.setVisible(true);
+                telaprincipalOP.setResizable(false);  
+            }
         }
     }
 /**

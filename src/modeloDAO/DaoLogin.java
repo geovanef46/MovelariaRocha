@@ -46,10 +46,11 @@ public class DaoLogin {
                 conex.desconecta();  
                 return usuario;
             }else{
-                JOptionPane.showMessageDialog(null, "Digite seu Login ou senha novamente!");
+                JOptionPane.showMessageDialog(null, "Digite seu Nome ou senha novamente!");
             }  
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao Logar!");
+             JOptionPane.showMessageDialog(null, "Algo parece está errado!");
+            JOptionPane.showMessageDialog(null, "Digite seu Nome e senha novamente!");
         }
         conex.desconecta();
         return null;
@@ -126,7 +127,7 @@ public class DaoLogin {
               return true;
             }  
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao checar a tabela!");
+            JOptionPane.showMessageDialog(null, "Consulte um técnico! Erro interno no banco de dados!");
         }
         conex.desconecta();
         return false;

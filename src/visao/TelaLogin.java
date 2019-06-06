@@ -6,6 +6,7 @@
 package visao;
 
 import controle.GerenciadorDeLogin;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modeloBeans.funcionario.BeansFuncionario;
 
@@ -16,7 +17,7 @@ import modeloBeans.funcionario.BeansFuncionario;
  * @author Geovanef46
  */
 public class TelaLogin extends javax.swing.JFrame {
-
+    public static JFrame tela;
     /**
      * Creates new form Tela_Login
      */
@@ -148,6 +149,7 @@ public class TelaLogin extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -189,11 +191,16 @@ public class TelaLogin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaLogin().setVisible(true);
+                       TelaLogin tela =  new TelaLogin();
+               tela.setVisible(true);
+               tela.setInstance(tela);
             }
         });
     }
 
+       public void setInstance(JFrame tela){
+           this.tela = tela;
+       }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAcessar;
     private javax.swing.JButton jButtonCancelar;
