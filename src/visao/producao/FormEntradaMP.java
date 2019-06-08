@@ -83,7 +83,7 @@ public class FormEntradaMP extends javax.swing.JFrame {
             }
         });
 
-        jButtonSalvar.setBackground(new java.awt.Color(25, 241, 21));
+        jButtonSalvar.setBackground(new java.awt.Color(102, 255, 102));
         jButtonSalvar.setText("Salvar");
         jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,7 +98,7 @@ public class FormEntradaMP extends javax.swing.JFrame {
             }
         });
 
-        jButtonAdicionar.setBackground(new java.awt.Color(18, 238, 28));
+        jButtonAdicionar.setBackground(new java.awt.Color(102, 255, 102));
         jButtonAdicionar.setText("Alterar");
         jButtonAdicionar.setEnabled(false);
         jButtonAdicionar.addActionListener(new java.awt.event.ActionListener() {

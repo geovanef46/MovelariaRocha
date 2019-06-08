@@ -14,6 +14,7 @@ Solucionar problemas no metodo atualizaUsuario() no daoFuncionario... adequar no
 
 Módulo de producao;ok
 Pesquisar Produto;ok
+Pesquisar MP //TODO
 
 
 4 - Módulo Empresa; ok falta restante do crud
@@ -25,6 +26,7 @@ FormEntradaEmpresa -> Falta atualizar a mascara de CNPJ
 Vender ok Ainda falta add quantidade
 Pesquisar Produto ok
 Registrar compras ok
+Add Cliente na view Vendedor //TODO
 
 
 
@@ -42,7 +44,7 @@ Alterar caminho do Banco
 
 8 - Adicionar o Sobre
 9 - Conferir menus 1 a 1
-
+10 - implementar detalhes de moveis, MP, funcionarios
 obs:
 1 - Com a análise da estrutura de acesso, foi necessário criar uma tabela de controle.
 
