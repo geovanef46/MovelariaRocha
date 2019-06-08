@@ -51,6 +51,8 @@ public class DaoLogin {
         } catch (SQLException ex) {
              JOptionPane.showMessageDialog(null, "Algo parece está errado!");
             JOptionPane.showMessageDialog(null, "Digite seu Nome e senha novamente!");
+        }catch(NullPointerException ne){
+            
         }
         conex.desconecta();
         return null;
@@ -126,7 +128,9 @@ public class DaoLogin {
               conex.desconecta();  
               return true;
             }  
-        } catch (SQLException ex) {
+        }   catch(NullPointerException ne){
+            JOptionPane.showMessageDialog(null, "Erro ao buscar o banco de dados: Necessita Configuração ");
+        }  catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Consulte um técnico! Erro interno no banco de dados!");
         }
         conex.desconecta();
