@@ -16,27 +16,32 @@ Módulo de producao;ok
 Pesquisar Produto;ok
 
 
-Módulo Empresa; ok falta restante do crud
+4 - Módulo Empresa; ok falta restante do crud
 Cliente  
 Fornecedor
+FormEntradaEmpresa -> Falta atualizar a mascara de CNPJ
 
-Módulo Vendas;
+5 - Módulo Vendas;
 Vender ok Ainda falta add quantidade
 Pesquisar Produto ok
 Registrar compras ok
 
 
 
-Módulo Relatórios;
+6 - Módulo Relatórios;
+Gerenciador de Relatórios
 
 
 
-Módulo de Configuracao;
+7 - Módulo de Configuracao;
 mostrar ao iniciar
 Alterar usuario sql
 Alterar caminho do Banco
 
 
+
+8 - Adicionar o Sobre
+9 - Conferir menus 1 a 1
 
 obs:
 1 - Com a análise da estrutura de acesso, foi necessário criar uma tabela de controle.

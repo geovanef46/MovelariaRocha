@@ -226,9 +226,9 @@ public class DaoEmpresa {
 //        return mod;
 //    }
 
-    public BeansCliente buscaLojaPorCNPJ(String nome) {
+    public BeansCliente buscaLojaPorCNPJ(String cnpj) {
         conex.conexao();
-        conex.executaSql("select *from Empresa where nome like'%" + nome + "%'");
+        conex.executaSql("select *from Empresa where nome like'%" + cnpj + "%'");
         try {
             conex.rs.first();
             mod.setCNPJ(conex.rs.getString("CNPJ"));

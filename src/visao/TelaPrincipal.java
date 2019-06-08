@@ -12,6 +12,7 @@ import visao.producao.FormEntradaMovel;
 //import visao.produto.FormVender;
 import visao.producao.FormEntradaMP;
 import visao.funcionario.FormEntradaFuncionario;
+import visao.funcionario.PesquisaFuncionario;
 import visao.producao.PesquisaMovel;
 
 /**
@@ -27,6 +28,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 //    private GerarRelatorio gerar;
     private FormEntradaMP entradaMP;
     private BeansFuncionario funcionarioAtivo;
+    private PesquisaFuncionario novaPesquisaFunc;
  
 
     /**
@@ -135,7 +137,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButtonAdicionar);
-        jButtonAdicionar.setBounds(40, 60, 100, 50);
+        jButtonAdicionar.setBounds(20, 50, 120, 50);
 
         jButtonPesquisar.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonPesquisar.setForeground(new java.awt.Color(5, 5, 19));
@@ -147,7 +149,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButtonPesquisar);
-        jButtonPesquisar.setBounds(40, 140, 110, 50);
+        jButtonPesquisar.setBounds(20, 140, 120, 50);
 
         jButtonVender.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonVender.setForeground(new java.awt.Color(5, 5, 19));
@@ -159,11 +161,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButtonVender);
-        jButtonVender.setBounds(40, 220, 100, 50);
+        jButtonVender.setBounds(20, 230, 120, 50);
 
         jLabel4.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(5, 5, 19));
-        jLabel4.setText("Produtos:");
+        jLabel4.setText("Móveis:");
         jPanel3.add(jLabel4);
         jLabel4.setBounds(60, 10, 80, 30);
 
@@ -183,7 +185,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonPesquisarFuncionario);
-        jButtonPesquisarFuncionario.setBounds(50, 220, 110, 50);
+        jButtonPesquisarFuncionario.setBounds(40, 230, 130, 50);
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(5, 5, 19));
@@ -200,7 +202,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonNovoFuncionario);
-        jButtonNovoFuncionario.setBounds(50, 60, 110, 50);
+        jButtonNovoFuncionario.setBounds(40, 50, 130, 50);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(5, 5, 19));
@@ -231,7 +233,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButtonGerarRelatorio);
-        jButtonGerarRelatorio.setBounds(30, 220, 120, 50);
+        jButtonGerarRelatorio.setBounds(30, 230, 120, 50);
 
         jLabel5.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(5, 5, 19));
@@ -256,7 +258,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jButtonAdicionarLoja);
-        jButtonAdicionarLoja.setBounds(40, 60, 100, 50);
+        jButtonAdicionarLoja.setBounds(30, 50, 120, 50);
 
         jLabel6.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(5, 5, 19));
@@ -357,6 +359,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 //            novaEntrada.setVisible(true);
 //            novaEntrada.setResizable(false);  
 //        }
+
+
     }//GEN-LAST:event_jMenuItemNovoProdutoActionPerformed
 
     private void jMenuItemPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPesquisarActionPerformed
@@ -371,7 +375,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemPesquisarActionPerformed
 
     private void jButtonPesquisarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarFuncionarioActionPerformed
-        // TODO add your handling code here:
+                if (novaPesquisaFunc == null) {
+            novaPesquisaFunc = new PesquisaFuncionario();
+            novaPesquisaFunc.setVisible(true);
+            novaPesquisaFunc.setResizable(false);
+        }else{
+            novaPesquisaFunc.setVisible(true);
+            novaPesquisaFunc.setResizable(false);
+        }
     }//GEN-LAST:event_jButtonPesquisarFuncionarioActionPerformed
 
     private void jButtonNovoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoFuncionarioActionPerformed

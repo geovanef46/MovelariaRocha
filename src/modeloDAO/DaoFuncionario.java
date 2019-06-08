@@ -100,6 +100,29 @@ public class DaoFuncionario implements Dao {
         conex.desconecta();
     }
 
+    public BeansFuncionario buscaFuncionarioPorNome(String nome) {
+        conex.conexao();
+        conex.executaSql("select *from funcionario where nome like'%" + nome + "%'");
+        try {
+            conex.rs.first();
+            mod.setCPF(conex.rs.getString("CPF"));
+            mod.setNome(conex.rs.getString("nome"));
+            mod.setRua(conex.rs.getString("rua"));
+            mod.setBairro(conex.rs.getString("bairro"));
+            mod.setNumero(conex.rs.getInt("numero"));
+            mod.setCidade(conex.rs.getString("cidade"));
+            mod.setTipoFunc(conex.rs.getString("tipoFunc"));
+            mod.setTelefone(conex.rs.getInt("telefone01"));
+            mod.setTelefone2(conex.rs.getInt("telefone02"));
+            conex.rs.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao buscar funcionario inesistente \n Tente novamente ");
+
+        }
+        conex.desconecta();
+        return mod;
+    }
+
     public BeansFuncionario buscaFuncionarioPorNome(BeansFuncionario mod) {
         conex.conexao();
         conex.executaSql("select *from funcionario where nome like'%" + mod.getPesquisa() + "%'");
@@ -116,7 +139,7 @@ public class DaoFuncionario implements Dao {
             mod.setTelefone2(conex.rs.getInt("telefone02"));
             conex.rs.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao buscar produto inesistente \n Tente novamente ");
+            JOptionPane.showMessageDialog(null, "Erro ao buscar f inesistente \n Tente novamente ");
 
         }
         conex.desconecta();
@@ -140,7 +163,7 @@ public class DaoFuncionario implements Dao {
 
             conex.rs.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao buscar produto inesistente \n Tente novamente ");
+            JOptionPane.showMessageDialog(null, "Erro ao buscar funcionario inesistente \n Tente novamente ");
 
         }
         conex.desconecta();
@@ -155,7 +178,6 @@ public class DaoFuncionario implements Dao {
             conex.rs.first();
             modelo.setCPF(conex.rs.getString("CPF"));
             modelo.setTipoFunc(conex.rs.getString("tipoFunc"));
-            System.out.println(conex.rs.getString("nome"));
             modelo.setNome(conex.rs.getString("nome"));
             modelo.setRua(conex.rs.getString("rua"));
             modelo.setBairro(conex.rs.getString("bairro"));

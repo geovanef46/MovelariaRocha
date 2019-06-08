@@ -57,14 +57,9 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="jButtonCancelar" min="-2" pref="109" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                          <Component id="jButtonCriaLogin" min="-2" pref="109" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -82,6 +77,12 @@
                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                          <Component id="jButtonCancelar" min="-2" pref="146" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="jButtonCriaLogin" min="-2" pref="158" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="122" max="32767" attributes="0"/>
@@ -141,7 +142,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="DejaVu Serif" size="12" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Criar Login"/>
+            <Property name="text" type="java.lang.String" value="Criar Acesso"/>
             <Property name="toolTipText" type="java.lang.String" value="Crie um login de acesso para o usu&#xe1;rio do sistema"/>
           </Properties>
           <Events>

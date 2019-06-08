@@ -56,8 +56,8 @@ public class AdicionaCliente extends javax.swing.JFrame {
         jTablePesquisar = new javax.swing.JTable();
         jCheckBoxCNPJ = new javax.swing.JCheckBox();
         jCheckBoxNome = new javax.swing.JCheckBox();
-        jButtonVender = new javax.swing.JButton();
-        jButtonNovaEmpresa = new javax.swing.JButton();
+        jButtonAdicionarCliente = new javax.swing.JButton();
+        jButtonNovoCliente = new javax.swing.JButton();
         jLabelPesquisarProduto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -94,7 +94,7 @@ public class AdicionaCliente extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTablePesquisar);
 
-        jCheckBoxCNPJ.setText("Por Tipo");
+        jCheckBoxCNPJ.setText("Por CNPJ");
         jCheckBoxCNPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxCNPJActionPerformed(evt);
@@ -109,21 +109,21 @@ public class AdicionaCliente extends javax.swing.JFrame {
             }
         });
 
-        jButtonVender.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonVender.setText("Adicionar");
-        jButtonVender.setEnabled(false);
-        jButtonVender.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAdicionarCliente.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButtonAdicionarCliente.setText("Adicionar");
+        jButtonAdicionarCliente.setEnabled(false);
+        jButtonAdicionarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVenderActionPerformed(evt);
+                jButtonAdicionarClienteActionPerformed(evt);
             }
         });
 
-        jButtonNovaEmpresa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonNovaEmpresa.setText("Novo");
-        jButtonNovaEmpresa.setEnabled(false);
-        jButtonNovaEmpresa.addActionListener(new java.awt.event.ActionListener() {
+        jButtonNovoCliente.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButtonNovoCliente.setText("Novo");
+        jButtonNovoCliente.setEnabled(false);
+        jButtonNovoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonNovaEmpresaActionPerformed(evt);
+                jButtonNovoClienteActionPerformed(evt);
             }
         });
 
@@ -143,12 +143,12 @@ public class AdicionaCliente extends javax.swing.JFrame {
                         .addComponent(jCheckBoxNome)
                         .addGap(18, 18, 18)
                         .addComponent(jCheckBoxCNPJ)))
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 4, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAdicionaLojaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonNovaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
-                .addComponent(jButtonVender, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonAdicionarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
         );
         jPanelAdicionaLojaLayout.setVerticalGroup(
@@ -166,8 +166,8 @@ public class AdicionaCliente extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanelAdicionaLojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonVender, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonNovaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonAdicionarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52))
         );
 
@@ -196,7 +196,7 @@ public class AdicionaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBoxCNPJActionPerformed
 
     private void jTablePesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablePesquisarMouseClicked
-        jButtonVender.setEnabled(true);
+        jButtonAdicionarCliente.setEnabled(true);
         String loja = ""+jTablePesquisar.getValueAt(jTablePesquisar.getSelectedRow(),1);
         modelo = DaoControl.buscaLojaPorCNPJ(loja);
     }//GEN-LAST:event_jTablePesquisarMouseClicked
@@ -211,7 +211,7 @@ public class AdicionaCliente extends javax.swing.JFrame {
         }//select *from Empresa where tipo='CLIENTE' order by nome
     }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
-    private void jButtonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVenderActionPerformed
+    private void jButtonAdicionarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarClienteActionPerformed
             if (formVender == null) {
             formVender = new FormVender();
             formVender.adicionaLoja((BeansCliente)modelo);
@@ -224,9 +224,9 @@ public class AdicionaCliente extends javax.swing.JFrame {
             formVender.setResizable(false);
             this.dispose();
         }
-    }//GEN-LAST:event_jButtonVenderActionPerformed
+    }//GEN-LAST:event_jButtonAdicionarClienteActionPerformed
 
-    private void jButtonNovaEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovaEmpresaActionPerformed
+    private void jButtonNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoClienteActionPerformed
             if (FormEntradaEmpresa == null) {
             novaEmpresa = new FormEntradaEmpresa();
             novaEmpresa.setVisible(true);
@@ -235,7 +235,7 @@ public class AdicionaCliente extends javax.swing.JFrame {
             novaEmpresa.setVisible(true);
             novaEmpresa.setResizable(false);
         }
-    }//GEN-LAST:event_jButtonNovaEmpresaActionPerformed
+    }//GEN-LAST:event_jButtonNovoClienteActionPerformed
     
     /**
      * Realiza Pesquisa de acordo com a seleção dos CheckBox
@@ -251,7 +251,7 @@ public class AdicionaCliente extends javax.swing.JFrame {
         }else{
          BeansCliente model = (BeansCliente) DaoControl.buscaLojaPorTipo((BeansCliente) modelo);
          if(model.getCNPJ()!= null){
-            PreencherTabela("select *from Empresa where tipo like'%"+ modelo.getPesquisa()+"%'");
+            PreencherTabela("select *from Empresa where CNPJ like'%"+ modelo.getPesquisa()+"%'");
          }else{
             jTextFieldPesquisaLoja.setText("");
          }        
@@ -288,7 +288,7 @@ public class AdicionaCliente extends javax.swing.JFrame {
     }
     
     public void bloqueiaBotoes(){
-        jButtonVender.setEnabled(false);
+        jButtonAdicionarCliente.setEnabled(false);
     }
     /**
      * @param args the command line arguments
@@ -327,9 +327,9 @@ public class AdicionaCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonNovaEmpresa;
+    private javax.swing.JButton jButtonAdicionarCliente;
+    private javax.swing.JButton jButtonNovoCliente;
     private javax.swing.JButton jButtonPesquisar;
-    private javax.swing.JButton jButtonVender;
     private javax.swing.JCheckBox jCheckBoxCNPJ;
     private javax.swing.JCheckBox jCheckBoxNome;
     private javax.swing.JLabel jLabelPesquisarProduto;

@@ -121,7 +121,7 @@ public class TelaLogin extends javax.swing.JFrame {
           
           }
       }else{
-          JOptionPane.showMessageDialog(rootPane, "Preencha os campos Corretamente!");
+          JOptionPane.showMessageDialog(rootPane, "Preencha os campos Nome e Senha Corretamente!");
       }
     }//GEN-LAST:event_jButtonAcessarActionPerformed
     

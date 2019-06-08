@@ -8,7 +8,6 @@ package visao.cliente;
 import controle.GerenciadorDeBD;
 import java.util.ArrayList;
 import javax.swing.ListSelectionModel;
-import modeloBeans.empresa.BeansCliente;
 import modeloBeans.ModeloTabela;
 import modeloBeans.empresa.BeansEmpresa;
 import modeloBeans.empresa.BeansFornecedor;
@@ -16,7 +15,7 @@ import visao.producao.FormEntradaMP;
 
 
 /**
- * View de pesquisa de cliente,permite realizar a busca de 
+ * View de pesquisa de Fornecedor,permite realizar a busca de 
  * Empresas para vincular em um fornecimento 
  * @author geovanef46
  */
@@ -55,8 +54,8 @@ public class AdicionaFornecedor extends javax.swing.JFrame {
         jTablePesquisar = new javax.swing.JTable();
         jCheckBoxCNPJ = new javax.swing.JCheckBox();
         jCheckBoxNome = new javax.swing.JCheckBox();
-        jButtonVender = new javax.swing.JButton();
-        jButtonNovaEmpresa = new javax.swing.JButton();
+        jButtonAdicionarFornecedor = new javax.swing.JButton();
+        jButtonNovoFornecedor = new javax.swing.JButton();
         jLabelPesquisarProduto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -93,7 +92,7 @@ public class AdicionaFornecedor extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTablePesquisar);
 
-        jCheckBoxCNPJ.setText("Por Tipo");
+        jCheckBoxCNPJ.setText("Por CNPJ");
         jCheckBoxCNPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxCNPJActionPerformed(evt);
@@ -108,21 +107,21 @@ public class AdicionaFornecedor extends javax.swing.JFrame {
             }
         });
 
-        jButtonVender.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonVender.setText("Adicionar");
-        jButtonVender.setEnabled(false);
-        jButtonVender.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAdicionarFornecedor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButtonAdicionarFornecedor.setText("Adicionar");
+        jButtonAdicionarFornecedor.setEnabled(false);
+        jButtonAdicionarFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVenderActionPerformed(evt);
+                jButtonAdicionarFornecedorActionPerformed(evt);
             }
         });
 
-        jButtonNovaEmpresa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonNovaEmpresa.setText("Novo");
-        jButtonNovaEmpresa.setEnabled(false);
-        jButtonNovaEmpresa.addActionListener(new java.awt.event.ActionListener() {
+        jButtonNovoFornecedor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButtonNovoFornecedor.setText("Novo");
+        jButtonNovoFornecedor.setEnabled(false);
+        jButtonNovoFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonNovaEmpresaActionPerformed(evt);
+                jButtonNovoFornecedorActionPerformed(evt);
             }
         });
 
@@ -142,12 +141,12 @@ public class AdicionaFornecedor extends javax.swing.JFrame {
                         .addComponent(jCheckBoxNome)
                         .addGap(18, 18, 18)
                         .addComponent(jCheckBoxCNPJ)))
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 4, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAdicionaLojaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonNovaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonNovoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
-                .addComponent(jButtonVender, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonAdicionarFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
         );
         jPanelAdicionaLojaLayout.setVerticalGroup(
@@ -165,8 +164,8 @@ public class AdicionaFornecedor extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanelAdicionaLojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonVender, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonNovaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonAdicionarFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonNovoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52))
         );
 
@@ -210,7 +209,7 @@ public class AdicionaFornecedor extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
-    private void jButtonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVenderActionPerformed
+    private void jButtonAdicionarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarFornecedorActionPerformed
         if (formEntradaMP == null) {
             formEntradaMP = new FormEntradaMP();
             formEntradaMP.adicionaLoja((BeansFornecedor) modelo);
@@ -223,9 +222,9 @@ public class AdicionaFornecedor extends javax.swing.JFrame {
             formEntradaMP.setResizable(false);
             this.dispose();
         }
-    }//GEN-LAST:event_jButtonVenderActionPerformed
+    }//GEN-LAST:event_jButtonAdicionarFornecedorActionPerformed
 
-    private void jButtonNovaEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovaEmpresaActionPerformed
+    private void jButtonNovoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoFornecedorActionPerformed
         if (FormEntradaEmpresa == null) {
             novaEmpresa = new FormEntradaEmpresa();
             novaEmpresa.setVisible(true);
@@ -234,7 +233,7 @@ public class AdicionaFornecedor extends javax.swing.JFrame {
             novaEmpresa.setVisible(true);
             novaEmpresa.setResizable(false);
         }
-    }//GEN-LAST:event_jButtonNovaEmpresaActionPerformed
+    }//GEN-LAST:event_jButtonNovoFornecedorActionPerformed
 
     
       /**
@@ -251,7 +250,7 @@ public class AdicionaFornecedor extends javax.swing.JFrame {
         } else {
             BeansFornecedor model = DaoControl.buscaLojaPorTipo((BeansFornecedor) modelo);
             if (model.getCNPJ() != null) {
-                PreencherTabela("select *from Empresa where tipo like'%" + modelo.getPesquisa() + "%'");
+                PreencherTabela("select *from Empresa where CNPJ like'%" + modelo.getPesquisa() + "%'");
             } else {
                 jTextFieldPesquisaLoja.setText("");
             }
@@ -287,7 +286,7 @@ public class AdicionaFornecedor extends javax.swing.JFrame {
     }
 
     public void bloqueiaBotoes() {
-        jButtonVender.setEnabled(false);
+        jButtonAdicionarFornecedor.setEnabled(false);
     }
 
     /**
@@ -327,9 +326,9 @@ public class AdicionaFornecedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonNovaEmpresa;
+    private javax.swing.JButton jButtonAdicionarFornecedor;
+    private javax.swing.JButton jButtonNovoFornecedor;
     private javax.swing.JButton jButtonPesquisar;
-    private javax.swing.JButton jButtonVender;
     private javax.swing.JCheckBox jCheckBoxCNPJ;
     private javax.swing.JCheckBox jCheckBoxNome;
     private javax.swing.JLabel jLabelPesquisarProduto;

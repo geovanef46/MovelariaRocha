@@ -96,7 +96,14 @@ public class GerenciadorDeBD {
     public void salvar(BeansFuncionario modelo) {
         DaoFunc.salvar(modelo);
     }
-
+    
+    public BeansFuncionario selecionaFunc(String nome){
+       return DaoFunc.buscaFuncionarioPorNome(nome);
+    }
+    
+    public BeansFuncionario selecionaFunc(BeansFuncionario func){
+       return DaoFunc.buscaFuncionarioPorNome(func);
+    }
     //--------------------------------Empresa--------------------------------------------------
     public BeansFornecedor buscaLojaPorNome(BeansFornecedor modelo) {
         return DaoLoja.buscaLojaPorNome(modelo);
