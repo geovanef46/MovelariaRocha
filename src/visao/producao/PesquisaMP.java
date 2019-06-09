@@ -164,7 +164,7 @@ public class PesquisaMP extends javax.swing.JFrame {
     private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
         bloqueiaBotoes();
         if(!jTextFieldPesquisaProduto.getText().isEmpty()){
-            this.modelo.setPesquisa(jTextFieldPesquisaProduto.getText());
+            modelo.setPesquisa(jTextFieldPesquisaProduto.getText());
             pesquisa();
         }else{
             PreencherTabela("select *from materia_prima order by nome");
@@ -177,7 +177,7 @@ public class PesquisaMP extends javax.swing.JFrame {
 
     private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
         if (novoMP == null) {
-            novoMP = new FormEntradaMP(this.modelo);
+            novoMP = new FormEntradaMP(modelo);
             novoMP.setVisible(true);
             novoMP.setResizable(false);
         }else{

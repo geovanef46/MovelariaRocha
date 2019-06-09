@@ -36,7 +36,7 @@ public class FormEntradaMP extends javax.swing.JFrame {
     
     public FormEntradaMP(BeansMateria_prima novaMP) {
         initComponents();
-        preencheCampos(modelo);
+        preencheCampos(novaMP);
         PreencherTabela("select *from materia_prima order by nome");
     }
 
@@ -313,13 +313,13 @@ public class FormEntradaMP extends javax.swing.JFrame {
     
     private void preencheCampos(BeansMateria_prima model){
         
-        if (model.getCodigo() != 0) {
+
         jTextFieldCodProduto.setText(String.valueOf(model.getCodigo()));
         jTextFieldNomeProduto.setText(model.getNome());
         jFormattedTextFieldQtdEstoque.setText(String.valueOf(model.getQtd()));
         jTextFieldDescricaoProduto.setText(model.getDescricao());
         jFormattedTextFieldPrecoProduto.setText(model.getPreco());
-        }
+        
     }
     
     
