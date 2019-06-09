@@ -128,12 +128,18 @@
             <Property name="text" type="java.lang.String" value="Editar"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonEditarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonApagar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Apagar"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonApagarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

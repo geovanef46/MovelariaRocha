@@ -25,6 +25,7 @@ public class PesquisaMP extends javax.swing.JFrame {
     
     BeansMateria_prima modelo = new BeansMateria_prima();
     GerenciadorDeBD DaoControl = new GerenciadorDeBD();
+    FormEntradaMP novoMP;
     /**
      * Creates new form PesquisaProduto
      */
@@ -87,9 +88,19 @@ public class PesquisaMP extends javax.swing.JFrame {
 
         jButtonEditar.setText("Editar");
         jButtonEditar.setEnabled(false);
+        jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarActionPerformed(evt);
+            }
+        });
 
         jButtonApagar.setText("Apagar");
         jButtonApagar.setEnabled(false);
+        jButtonApagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonApagarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelPesquisaProdutoLayout = new javax.swing.GroupLayout(jPanelPesquisaProduto);
         jPanelPesquisaProduto.setLayout(jPanelPesquisaProdutoLayout);
@@ -153,12 +164,27 @@ public class PesquisaMP extends javax.swing.JFrame {
     private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
         bloqueiaBotoes();
         if(!jTextFieldPesquisaProduto.getText().isEmpty()){
-            modelo.setPesquisa(jTextFieldPesquisaProduto.getText());
+            this.modelo.setPesquisa(jTextFieldPesquisaProduto.getText());
             pesquisa();
         }else{
             PreencherTabela("select *from materia_prima order by nome");
         }
     }//GEN-LAST:event_jButtonPesquisarActionPerformed
+
+    private void jButtonApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonApagarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonApagarActionPerformed
+
+    private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
+        if (novoMP == null) {
+            novoMP = new FormEntradaMP(this.modelo);
+            novoMP.setVisible(true);
+            novoMP.setResizable(false);
+        }else{
+            novoMP.setVisible(true);
+            novoMP.setResizable(false);
+        }
+    }//GEN-LAST:event_jButtonEditarActionPerformed
     
     
     private void pesquisa(){

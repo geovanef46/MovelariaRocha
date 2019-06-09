@@ -104,6 +104,10 @@ public class GerenciadorDeBD {
     public BeansFuncionario selecionaFunc(BeansFuncionario func){
        return DaoFunc.buscaFuncionarioPorNome(func);
     }
+    
+     public ArrayList PreencherTabelaFunc(String sql) {
+        return DaoFunc.PreencherTabelaFunc(sql);
+    }
     //--------------------------------Empresa--------------------------------------------------
     public BeansFornecedor buscaLojaPorNome(BeansFornecedor modelo) {
         return DaoLoja.buscaLojaPorNome(modelo);

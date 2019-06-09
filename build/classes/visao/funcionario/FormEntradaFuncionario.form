@@ -352,7 +352,7 @@
               <Font name="DejaVu Serif" size="12" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Criar Login"/>
-            <Property name="toolTipText" type="java.lang.String" value="Crie um login de acesso para o usu&#xe1;rio do sistema"/>
+            <Property name="toolTipText" type="java.lang.String" value="Permitir acesso ao sistema ao funcion&#xe1;rio"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCriaLoginActionPerformed"/>

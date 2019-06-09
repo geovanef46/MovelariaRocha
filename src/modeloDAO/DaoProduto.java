@@ -188,7 +188,7 @@ public class DaoProduto {
             modelo.setPreco(converterValores(conex.rs.getDouble("preco")));
             conex.rs.close();
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, "Erro ao selecionar os dados na tabela\n"+ex);
+            JOptionPane.showMessageDialog(null, "Erro ao selecionar os dados na tabela\n"+ex);
             return null;
         }
         conex.desconecta();
@@ -214,7 +214,7 @@ public class DaoProduto {
             modelo.setPreco(converterValores(conex.rs.getDouble("preco")));
             conex.rs.close();
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, "Erro ao selecionar os dados na tabela \n"+ex);
+            JOptionPane.showMessageDialog(null, "Erro ao selecionar os dados na tabela de Matéria-Prima\n");
             return null;
         }
         conex.desconecta();

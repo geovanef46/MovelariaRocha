@@ -33,6 +33,12 @@ public class FormEntradaMP extends javax.swing.JFrame {
         initComponents();
         PreencherTabela("select *from materia_prima order by nome");
     }
+    
+    public FormEntradaMP(BeansMateria_prima novaMP) {
+        initComponents();
+        preencheCampos(modelo);
+        PreencherTabela("select *from materia_prima order by nome");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -83,8 +89,8 @@ public class FormEntradaMP extends javax.swing.JFrame {
             }
         });
 
-        jButtonSalvar.setBackground(new java.awt.Color(102, 255, 102));
         jButtonSalvar.setText("Salvar");
+        jButtonSalvar.setToolTipText("Salvar dados");
         jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSalvarActionPerformed(evt);
@@ -92,14 +98,15 @@ public class FormEntradaMP extends javax.swing.JFrame {
         });
 
         jButtonCancelar.setText("Cancelar");
+        jButtonCancelar.setToolTipText("Fechar e Cancelar");
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarActionPerformed(evt);
             }
         });
 
-        jButtonAdicionar.setBackground(new java.awt.Color(102, 255, 102));
         jButtonAdicionar.setText("Alterar");
+        jButtonAdicionar.setToolTipText("Alterar informações da Materia-prima");
         jButtonAdicionar.setEnabled(false);
         jButtonAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -303,6 +310,19 @@ public class FormEntradaMP extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNomeProdutoActionPerformed
 
+    
+    private void preencheCampos(BeansMateria_prima model){
+        
+        if (model.getCodigo() != 0) {
+        jTextFieldCodProduto.setText(String.valueOf(model.getCodigo()));
+        jTextFieldNomeProduto.setText(model.getNome());
+        jFormattedTextFieldQtdEstoque.setText(String.valueOf(model.getQtd()));
+        jTextFieldDescricaoProduto.setText(model.getDescricao());
+        jFormattedTextFieldPrecoProduto.setText(model.getPreco());
+        }
+    }
+    
+    
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
         if (validarCampos() == true) {
             modelo.setNome(jTextFieldNomeProduto.getText());

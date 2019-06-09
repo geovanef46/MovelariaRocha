@@ -199,10 +199,8 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButtonSalvar">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="ff" red="66" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Salvar"/>
+            <Property name="toolTipText" type="java.lang.String" value="Salvar dados"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSalvarActionPerformed"/>
@@ -211,6 +209,7 @@
         <Component class="javax.swing.JButton" name="jButtonCancelar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
+            <Property name="toolTipText" type="java.lang.String" value="Fechar e Cancelar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelarActionPerformed"/>
@@ -218,10 +217,8 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButtonAdicionar">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="ff" red="66" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Alterar"/>
+            <Property name="toolTipText" type="java.lang.String" value="Alterar informa&#xe7;&#xf5;es da Materia-prima"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>

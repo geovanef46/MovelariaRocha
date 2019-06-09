@@ -7,6 +7,7 @@ package modeloDAO;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modeloBeans.funcionario.BeansFuncionario;
 
@@ -258,6 +259,34 @@ public class DaoFuncionario implements Dao {
 
         conex.desconecta();
     }
+    
+    
+    
+           /**
+     *  Preenche um arrayList com os dados que são recuperados do BD
+     * para em sequencia povoar a exibição em uma tabela de Funcionarios
+     * @param consulta sql
+     * @return 
+     */
+       public ArrayList PreencherTabelaFunc(String sql){
+        ArrayList dados = new ArrayList();//linhas
+        conex.conexao();
+        conex.executaSql(sql);
+        try {
+            if(conex.rs.first() == true){
+            do {                
+                dados.add(new Object[]{conex.rs.getString("CPF"), conex.rs.getString("nome"),conex.rs.getString("tipoFunc"), conex.rs.getInt("telefone01"),conex.rs.getInt("telefone02")});
+                
+            } while (conex.rs.next());}
+          
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null , "Erro ao preencher a tabela de Funcionários");
+            return null;
+        }
+        conex.desconecta();
+        return dados;
+    }
+ 
 
       /**
      *  Conversor de valores de double para String

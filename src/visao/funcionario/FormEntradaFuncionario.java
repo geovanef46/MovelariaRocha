@@ -136,7 +136,7 @@ public class FormEntradaFuncionario extends javax.swing.JFrame {
 
         jButtonCriaLogin.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
         jButtonCriaLogin.setText("Criar Login");
-        jButtonCriaLogin.setToolTipText("Crie um login de acesso para o usuário do sistema");
+        jButtonCriaLogin.setToolTipText("Permitir acesso ao sistema ao funcionário");
         jButtonCriaLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCriaLoginActionPerformed(evt);

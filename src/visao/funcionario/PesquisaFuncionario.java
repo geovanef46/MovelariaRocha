@@ -9,11 +9,8 @@ import visao.producao.*;
 import controle.GerenciadorDeBD;
 import java.util.ArrayList;
 import javax.swing.ListSelectionModel;
-import modeloBeans.produto.BeansProduto;
 import modeloBeans.ModeloTabela;
 import modeloBeans.funcionario.BeansFuncionario;
-import modeloBeans.produto.BeansMovel;
-import visao.vendas.FormVender;
 
 /**
  ** Form para Pesquisa de funcionario
@@ -189,7 +186,7 @@ public class PesquisaFuncionario extends javax.swing.JFrame {
     
     
     public void PreencherTabela(String sql){
-               ArrayList dados = DaoControl.PreencherTabela(sql);//linhas
+               ArrayList dados = DaoControl.PreencherTabelaFunc(sql);//linhas
         String[] colunas = new String[]{"CPF", "Nome", "Funcao","Telefone 01","Telefone 02"};//colunas
         
         ModeloTabela modeloTable = new ModeloTabela(dados, colunas);
