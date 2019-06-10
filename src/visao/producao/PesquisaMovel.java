@@ -162,12 +162,14 @@ public class PesquisaMovel extends javax.swing.JFrame {
 
     private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
          if (editarMovel == null) {
-            editarMovel = new FormEntradaMovel(modelo);
+            editarMovel = new FormEntradaMovel(this.modelo);
             editarMovel.setVisible(true);
             editarMovel.setResizable(false);
         }else{
+             
             editarMovel.setVisible(true);
             editarMovel.setResizable(false);
+            editarMovel.preencheCampos(this.modelo);
         }
     }//GEN-LAST:event_jButtonEditarActionPerformed
 
@@ -178,9 +180,9 @@ public class PesquisaMovel extends javax.swing.JFrame {
     
     private void pesquisa(){
 
-             BeansProduto model = DaoControl.buscaProdutoPorNome(modelo);
+             BeansProduto model = this.DaoControl.buscaProdutoPorNome(this.modelo);
             if(model.getCodigo()!=0){
-             PreencherTabela("select *from movel where nome like'%"+ modelo.getPesquisa()+"%'");
+             PreencherTabela("select *from movel where nome like'%"+ this.modelo.getPesquisa()+"%'");
             }else{
              jTextFieldPesquisaProduto.setText("");
              }       
@@ -188,7 +190,7 @@ public class PesquisaMovel extends javax.swing.JFrame {
     
     
     public void PreencherTabela(String sql){
-               ArrayList dados = DaoControl.PreencherTabela(sql);//linhas
+               ArrayList dados = this.DaoControl.PreencherTabela(sql);//linhas
         String[] colunas = new String[]{"Código", "Nome", "Cor","Quantidade","Marca","Preço"};//colunas
         
         ModeloTabela modeloTable = new ModeloTabela(dados, colunas);

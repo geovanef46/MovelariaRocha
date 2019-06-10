@@ -34,8 +34,8 @@ public class FormEntradaMovel extends javax.swing.JFrame {
     }
 
         public FormEntradaMovel(BeansMovel model) {
-            preencheCampos(model);
         initComponents();
+        preencheCampos(model);
         PreencherTabela("select *from movel order by nome");
     }
         
@@ -346,6 +346,7 @@ public class FormEntradaMovel extends javax.swing.JFrame {
         jTextFieldNomeProduto.setEnabled(true);
         jFormattedTextFieldPrecoProduto.setEnabled(true);
         jFormattedTextFieldQtdEstoque.setEnabled(false);
+        jSpinnerAddqtd.setEnabled(true);
 
         jTextFieldCodProduto.setText(String.valueOf(model.getCodigo()));
         jTextFieldNomeProduto.setText(model.getNome());
@@ -421,6 +422,7 @@ public class FormEntradaMovel extends javax.swing.JFrame {
         jTextFieldNomeProduto.setEnabled(true);
         jFormattedTextFieldPrecoProduto.setEnabled(true);
         jComboBoxCorProduto.setEnabled(true);
+        jSpinnerAddqtd.setEnabled(true);
         
          modelo.setNome(jTextFieldNomeProduto.getText());
          modelo.setDescricao(jTextFieldDescricaoProduto.getText());
@@ -449,6 +451,7 @@ public class FormEntradaMovel extends javax.swing.JFrame {
         jFormattedTextFieldPrecoProduto.setEnabled(false);
         jFormattedTextFieldQtdEstoque.setEnabled(false);
         jComboBoxCorProduto.setEnabled(false);
+        jSpinnerAddqtd.setEnabled(false);
         }else{
             JOptionPane.showMessageDialog(rootPane, "Preencha os Dados do Produto!");
         }
@@ -468,6 +471,7 @@ public class FormEntradaMovel extends javax.swing.JFrame {
         jTextFieldNomeProduto.setEnabled(true);
         jFormattedTextFieldPrecoProduto.setEnabled(true);
         jComboBoxCorProduto.setEnabled(true);
+        jSpinnerAddqtd.setEnabled(true);
         String nome = ""+jTablePesquisarBD.getValueAt(jTablePesquisarBD.getSelectedRow(), 1);
         modelo = (BeansMovel) DaoControl.selecionaMovel(nome);
 
@@ -491,6 +495,7 @@ public class FormEntradaMovel extends javax.swing.JFrame {
         jTextFieldNomeProduto.setEnabled(true);
         jFormattedTextFieldPrecoProduto.setEnabled(true);
         jComboBoxCorProduto.setEnabled(true);
+        jSpinnerAddqtd.setEnabled(false);
     }//GEN-LAST:event_jButtonNovoActionPerformed
 
     private void jTextFieldDescricaoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDescricaoProdutoActionPerformed

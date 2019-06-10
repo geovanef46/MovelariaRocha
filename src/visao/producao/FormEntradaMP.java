@@ -49,6 +49,7 @@ public class FormEntradaMP extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelNomeMedico2 = new javax.swing.JLabel();
         jPanelCadastroMedicos = new javax.swing.JPanel();
         jLabelNomeMedico = new javax.swing.JLabel();
         jTextFieldNomeProduto = new javax.swing.JTextField();
@@ -71,8 +72,9 @@ public class FormEntradaMP extends javax.swing.JFrame {
         jSpinnerAddqtd = new javax.swing.JSpinner();
         jLabel2 = new javax.swing.JLabel();
         jLabelNomeDoFornecedor = new javax.swing.JLabel();
-        jLabelNomeMedico2 = new javax.swing.JLabel();
         jLabelEstoque = new javax.swing.JLabel();
+
+        jLabelNomeMedico2.setText("Fornecedor:");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Adicionar ao Estoque");
@@ -183,8 +185,6 @@ public class FormEntradaMP extends javax.swing.JFrame {
 
         jLabel2.setText("Adicionar:");
 
-        jLabelNomeMedico2.setText("Fornecedor:");
-
         javax.swing.GroupLayout jPanelCadastroMedicosLayout = new javax.swing.GroupLayout(jPanelCadastroMedicos);
         jPanelCadastroMedicos.setLayout(jPanelCadastroMedicosLayout);
         jPanelCadastroMedicosLayout.setHorizontalGroup(
@@ -236,8 +236,7 @@ public class FormEntradaMP extends javax.swing.JFrame {
                                         .addGroup(jPanelCadastroMedicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel4)
                                             .addGroup(jPanelCadastroMedicosLayout.createSequentialGroup()
-                                                .addComponent(jLabelNomeMedico2)
-                                                .addGap(18, 18, 18)
+                                                .addGap(104, 104, 104)
                                                 .addComponent(jLabelNomeDoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(0, 0, Short.MAX_VALUE)))))
                         .addContainerGap())
@@ -256,16 +255,15 @@ public class FormEntradaMP extends javax.swing.JFrame {
                             .addComponent(jSpinnerAddqtd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelCadastroMedicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelIdMedico)
-                            .addComponent(jTextFieldCodProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(jFormattedTextFieldQtdEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanelCadastroMedicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jFormattedTextFieldQtdEstoque, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelCadastroMedicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabelIdMedico)
+                                .addComponent(jTextFieldCodProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1)))
                         .addGap(2, 2, 2))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroMedicosLayout.createSequentialGroup()
-                        .addGroup(jPanelCadastroMedicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabelNomeDoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelNomeMedico2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabelNomeDoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -311,7 +309,7 @@ public class FormEntradaMP extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldNomeProdutoActionPerformed
 
     
-    private void preencheCampos(BeansMateria_prima model){
+    public void preencheCampos(BeansMateria_prima model){
         jButtonSalvar.setEnabled(false);
         jButtonAdicionar.setEnabled(true);
         jButtonNovo.setEnabled(false);
@@ -319,6 +317,7 @@ public class FormEntradaMP extends javax.swing.JFrame {
         jTextFieldNomeProduto.setEnabled(true);
         jFormattedTextFieldPrecoProduto.setEnabled(true);
         jFormattedTextFieldQtdEstoque.setEnabled(false);
+        jSpinnerAddqtd.setEnabled(true);
 
         jTextFieldCodProduto.setText(String.valueOf(model.getCodigo()));
         jTextFieldNomeProduto.setText(model.getNome());
@@ -388,6 +387,7 @@ public class FormEntradaMP extends javax.swing.JFrame {
             jTextFieldNomeProduto.setEnabled(true);
             jFormattedTextFieldPrecoProduto.setEnabled(true);
             jFormattedTextFieldQtdEstoque.setEnabled(true);
+            jSpinnerAddqtd.setEnabled(true);
 
             modelo.setNome(jTextFieldNomeProduto.getText());
             modelo.setDescricao(jTextFieldDescricaoProduto.getText());
@@ -409,6 +409,7 @@ public class FormEntradaMP extends javax.swing.JFrame {
                 jTextFieldNomeProduto.setEnabled(false);
                 jFormattedTextFieldPrecoProduto.setEnabled(false);
                 jFormattedTextFieldQtdEstoque.setEnabled(false);
+                jSpinnerAddqtd.setEnabled(false);
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Preencha os Dados da Materia-Prima!");
             }
@@ -427,6 +428,7 @@ public class FormEntradaMP extends javax.swing.JFrame {
         jTextFieldNomeProduto.setEnabled(true);
         jFormattedTextFieldPrecoProduto.setEnabled(true);
         jFormattedTextFieldQtdEstoque.setEnabled(true);
+        jSpinnerAddqtd.setEnabled(true);
         String nome = "" + jTablePesquisarBD.getValueAt(jTablePesquisarBD.getSelectedRow(), 1);
         modelo = (BeansMateria_prima) DaoControl.selecionaMPrima(nome);
 
@@ -447,6 +449,7 @@ public class FormEntradaMP extends javax.swing.JFrame {
         jTextFieldNomeProduto.setEnabled(true);
         jFormattedTextFieldPrecoProduto.setEnabled(true);
         jFormattedTextFieldQtdEstoque.setEnabled(true);
+        jSpinnerAddqtd.setEnabled(false);
     }//GEN-LAST:event_jButtonNovoActionPerformed
 
     private void jTextFieldDescricaoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDescricaoProdutoActionPerformed
@@ -454,8 +457,10 @@ public class FormEntradaMP extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldDescricaoProdutoActionPerformed
 
     public void adicionaLoja(BeansFornecedor loja) {
+        if(loja != null){
         modeloFornecedor = loja;
         jLabelNomeDoFornecedor.setText(modeloFornecedor.getNome());
+        }
     }
 
     public void PreencherTabela(String sql) {

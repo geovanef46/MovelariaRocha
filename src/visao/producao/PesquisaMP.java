@@ -181,8 +181,10 @@ public class PesquisaMP extends javax.swing.JFrame {
             novoMP.setVisible(true);
             novoMP.setResizable(false);
         }else{
+            
             novoMP.setVisible(true);
             novoMP.setResizable(false);
+            novoMP.preencheCampos(modelo);
         }
     }//GEN-LAST:event_jButtonEditarActionPerformed
     

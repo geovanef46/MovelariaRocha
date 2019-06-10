@@ -164,8 +164,9 @@ public class AdicionarProduto extends javax.swing.JFrame {
             formVender.setResizable(false);
             this.dispose();
         }else{
-                formVender.adicionaProduto(modelo);
+                
             formVender.setVisible(true);
+            formVender.adicionaProduto(modelo);
             formVender.setResizable(false);
             this.dispose();
         }

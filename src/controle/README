@@ -16,7 +16,7 @@ Novo Funcionario -> não fechar, no close() //OK continua com o fluxo, nao fecha
 3 - Módulo de producao;ok
 Pesquisar Produto;ok
 Pesquisar MP , apagar e editar na pesquisa
-retirar Vendas da pesquisa, trocar por editar, adequar a funcionalidade
+retirar Vendas da pesquisa, trocar por editar, adequar a funcionalidade//OK
 
 
 
