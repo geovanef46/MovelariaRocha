@@ -225,7 +225,7 @@ public class AdicionaFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAdicionarFornecedorActionPerformed
 
     private void jButtonNovoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoFornecedorActionPerformed
-        if (FormEntradaEmpresa == null) {
+        if (novaEmpresa == null) {
             novaEmpresa = new FormEntradaEmpresa();
             novaEmpresa.setVisible(true);
             novaEmpresa.setResizable(false);

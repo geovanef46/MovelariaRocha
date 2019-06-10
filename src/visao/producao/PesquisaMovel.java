@@ -21,7 +21,7 @@ public class PesquisaMovel extends javax.swing.JFrame {
     
     BeansMovel modelo = new BeansMovel();
     GerenciadorDeBD DaoControl = new GerenciadorDeBD();
-    private FormVender novaVenda;
+    private FormEntradaMovel editarMovel;
     /**
      * Creates new form PesquisaMP
      */
@@ -43,7 +43,7 @@ public class PesquisaMovel extends javax.swing.JFrame {
         jButtonPesquisar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablePesquisar = new javax.swing.JTable();
-        jButtonAbrirPedido = new javax.swing.JButton();
+        jButtonEditar = new javax.swing.JButton();
         jButtonDetalhes = new javax.swing.JButton();
         jLabelPesquisarProduto = new javax.swing.JLabel();
 
@@ -78,11 +78,11 @@ public class PesquisaMovel extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTablePesquisar);
 
-        jButtonAbrirPedido.setText("Vender");
-        jButtonAbrirPedido.setEnabled(false);
-        jButtonAbrirPedido.addActionListener(new java.awt.event.ActionListener() {
+        jButtonEditar.setText("Editar");
+        jButtonEditar.setEnabled(false);
+        jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAbrirPedidoActionPerformed(evt);
+                jButtonEditarActionPerformed(evt);
             }
         });
 
@@ -111,7 +111,7 @@ public class PesquisaMovel extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonAbrirPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75))
         );
         jPanelPesquisaProdutoLayout.setVerticalGroup(
@@ -125,7 +125,7 @@ public class PesquisaMovel extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanelPesquisaProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonAbrirPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52))
         );
 
@@ -145,7 +145,7 @@ public class PesquisaMovel extends javax.swing.JFrame {
 
         jButtonDetalhes.setEnabled(true);
 
-        jButtonAbrirPedido.setEnabled(true);
+        jButtonEditar.setEnabled(true);
         String nome_movel = ""+jTablePesquisar.getValueAt(jTablePesquisar.getSelectedRow(), 1);
         modelo = (BeansMovel) DaoControl.selecionaMovel(nome_movel);
     }//GEN-LAST:event_jTablePesquisarMouseClicked
@@ -160,20 +160,16 @@ public class PesquisaMovel extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
-    private void jButtonAbrirPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirPedidoActionPerformed
-            if (novaVenda == null) {
-            novaVenda = new FormVender();
-                novaVenda.iniciaVenda(modelo);
-            novaVenda.setVisible(true);
-            novaVenda.setResizable(false);
-            this.dispose();
+    private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
+         if (editarMovel == null) {
+            editarMovel = new FormEntradaMovel(modelo);
+            editarMovel.setVisible(true);
+            editarMovel.setResizable(false);
         }else{
-                novaVenda.iniciaVenda(modelo);
-            novaVenda.setVisible(true);
-            novaVenda.setResizable(false);
-                this.dispose();
+            editarMovel.setVisible(true);
+            editarMovel.setResizable(false);
         }
-    }//GEN-LAST:event_jButtonAbrirPedidoActionPerformed
+    }//GEN-LAST:event_jButtonEditarActionPerformed
 
     private void jButtonDetalhesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetalhesActionPerformed
         // TODO add your handling code here:
@@ -217,7 +213,7 @@ public class PesquisaMovel extends javax.swing.JFrame {
 
         jButtonDetalhes.setEnabled(false);
  
-        jButtonAbrirPedido.setEnabled(false);
+        jButtonEditar.setEnabled(false);
     }
     /**
      * @param args the command line arguments
@@ -258,8 +254,8 @@ public class PesquisaMovel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAbrirPedido;
     private javax.swing.JButton jButtonDetalhes;
+    private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonPesquisar;
     private javax.swing.JLabel jLabelPesquisarProduto;
     private javax.swing.JPanel jPanelPesquisaProduto;

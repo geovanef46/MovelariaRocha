@@ -52,7 +52,7 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jButtonDetalhes" min="-2" pref="162" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButtonAbrirPedido" min="-2" pref="144" max="-2" attributes="0"/>
+                  <Component id="jButtonEditar" min="-2" pref="144" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -69,7 +69,7 @@
                   <EmptySpace pref="43" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButtonDetalhes" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
-                      <Component id="jButtonAbrirPedido" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                      <Component id="jButtonEditar" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               </Group>
@@ -112,13 +112,13 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButtonAbrirPedido">
+        <Component class="javax.swing.JButton" name="jButtonEditar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Vender"/>
+            <Property name="text" type="java.lang.String" value="Editar"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAbrirPedidoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonEditarActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonDetalhes">

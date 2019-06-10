@@ -227,7 +227,7 @@ public class AdicionaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAdicionarClienteActionPerformed
 
     private void jButtonNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoClienteActionPerformed
-            if (FormEntradaEmpresa == null) {
+            if (novaEmpresa == null) {
             novaEmpresa = new FormEntradaEmpresa();
             novaEmpresa.setVisible(true);
             novaEmpresa.setResizable(false);
