@@ -130,6 +130,7 @@
                       </Group>
                   </Group>
               </Group>
+              <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -173,7 +174,9 @@
                       </Group>
                       <Component id="jTextFieldDescricaoProduto" min="-2" pref="93" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jTextFieldPesquisaProduto" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                       <Component id="jButtonPesquisarProduto" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
@@ -334,6 +337,8 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelNomeDoFornecedor">
+        </Component>
+        <Component class="javax.swing.JSeparator" name="jSeparator1">
         </Component>
       </SubComponents>
     </Container>

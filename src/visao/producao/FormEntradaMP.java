@@ -72,6 +72,7 @@ public class FormEntradaMP extends javax.swing.JFrame {
         jSpinnerAddqtd = new javax.swing.JSpinner();
         jLabel2 = new javax.swing.JLabel();
         jLabelNomeDoFornecedor = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         jLabelEstoque = new javax.swing.JLabel();
 
         jLabelNomeMedico2.setText("Fornecedor:");
@@ -245,6 +246,7 @@ public class FormEntradaMP extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButtonPesquisarProduto)
                         .addGap(20, 20, 20))))
+            .addComponent(jSeparator1)
         );
         jPanelCadastroMedicosLayout.setVerticalGroup(
             jPanelCadastroMedicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,6 +280,8 @@ public class FormEntradaMP extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jTextFieldDescricaoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
                 .addGroup(jPanelCadastroMedicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldPesquisaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonPesquisarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -575,6 +579,7 @@ public class FormEntradaMP extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNomeMedico2;
     private javax.swing.JPanel jPanelCadastroMedicos;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSpinner jSpinnerAddqtd;
     private javax.swing.JTable jTablePesquisarBD;
     private javax.swing.JTextField jTextFieldCodProduto;
