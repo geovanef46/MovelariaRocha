@@ -312,7 +312,13 @@ public class FormEntradaMP extends javax.swing.JFrame {
 
     
     private void preencheCampos(BeansMateria_prima model){
-        
+        jButtonSalvar.setEnabled(false);
+        jButtonAdicionar.setEnabled(true);
+        jButtonNovo.setEnabled(false);
+        jTextFieldDescricaoProduto.setEnabled(true);
+        jTextFieldNomeProduto.setEnabled(true);
+        jFormattedTextFieldPrecoProduto.setEnabled(true);
+        jFormattedTextFieldQtdEstoque.setEnabled(true);
 
         jTextFieldCodProduto.setText(String.valueOf(model.getCodigo()));
         jTextFieldNomeProduto.setText(model.getNome());
