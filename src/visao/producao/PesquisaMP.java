@@ -8,6 +8,7 @@ package visao.producao;
 import controle.GerenciadorDeBD;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 import javax.swing.ListSelectionModel;
 import modeloBeans.produto.BeansProduto;
@@ -53,6 +54,7 @@ public class PesquisaMP extends javax.swing.JFrame {
         jLabelPesquisarProduto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Pesquisar Materia-prima");
         getContentPane().setLayout(null);
 
         jTextFieldPesquisaProduto.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -117,12 +119,12 @@ public class PesquisaMP extends javax.swing.JFrame {
                 .addGap(0, 18, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPesquisaProdutoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addComponent(jButtonDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
         );
         jPanelPesquisaProdutoLayout.setVerticalGroup(
             jPanelPesquisaProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,13 +133,12 @@ public class PesquisaMP extends javax.swing.JFrame {
                     .addComponent(jButtonPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldPesquisaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                .addGroup(jPanelPesquisaProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonDetalhes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPesquisaProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButtonApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButtonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanelPesquisaProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42))
         );
 
@@ -145,9 +146,9 @@ public class PesquisaMP extends javax.swing.JFrame {
         jPanelPesquisaProduto.setBounds(20, 50, 860, 427);
 
         jLabelPesquisarProduto.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabelPesquisarProduto.setText("Pesquisar Produto");
+        jLabelPesquisarProduto.setText("Pesquisar Materia-prima");
         getContentPane().add(jLabelPesquisarProduto);
-        jLabelPesquisarProduto.setBounds(370, 10, 200, 30);
+        jLabelPesquisarProduto.setBounds(310, 10, 280, 30);
 
         setSize(new java.awt.Dimension(915, 522));
         setLocationRelativeTo(null);
@@ -172,7 +173,18 @@ public class PesquisaMP extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
     private void jButtonApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonApagarActionPerformed
-        // TODO add your handling code here:
+        int resposta = 0;
+        String nome= modelo.getNome();
+        if(modelo!= null && !nome.isEmpty()){
+        resposta = JOptionPane.showConfirmDialog(this.rootPane, "Deseja realmente apagar "+nome+" ?", "Cuidado!", JOptionPane.YES_NO_OPTION);
+        if (resposta == JOptionPane.YES_OPTION) {
+            DaoControl.excluir(modelo);
+            JOptionPane.showMessageDialog(this.rootPane, "foi excluido com sucesso!");
+        }
+            
+        }else{    
+        JOptionPane.showMessageDialog(this.rootPane, "Erro ao apagar!\nSelecione uma Matéria-Prima");
+        }
     }//GEN-LAST:event_jButtonApagarActionPerformed
 
     private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed

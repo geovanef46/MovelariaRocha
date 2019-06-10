@@ -7,6 +7,7 @@ package visao.producao;
 
 import controle.GerenciadorDeBD;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import modeloBeans.produto.BeansProduto;
 import modeloBeans.ModeloTabela;
@@ -44,7 +45,8 @@ public class PesquisaMovel extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablePesquisar = new javax.swing.JTable();
         jButtonEditar = new javax.swing.JButton();
-        jButtonDetalhes = new javax.swing.JButton();
+        jButtonApagar = new javax.swing.JButton();
+        jButtonDetalhes1 = new javax.swing.JButton();
         jLabelPesquisarProduto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -86,11 +88,19 @@ public class PesquisaMovel extends javax.swing.JFrame {
             }
         });
 
-        jButtonDetalhes.setText("Detalhes");
-        jButtonDetalhes.setEnabled(false);
-        jButtonDetalhes.addActionListener(new java.awt.event.ActionListener() {
+        jButtonApagar.setText("Apagar");
+        jButtonApagar.setEnabled(false);
+        jButtonApagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDetalhesActionPerformed(evt);
+                jButtonApagarActionPerformed(evt);
+            }
+        });
+
+        jButtonDetalhes1.setText("Detalhes");
+        jButtonDetalhes1.setEnabled(false);
+        jButtonDetalhes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetalhes1ActionPerformed(evt);
             }
         });
 
@@ -109,10 +119,12 @@ public class PesquisaMovel extends javax.swing.JFrame {
                 .addGap(0, 18, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPesquisaProdutoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75))
+                .addComponent(jButtonApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonDetalhes1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56))
         );
         jPanelPesquisaProdutoLayout.setVerticalGroup(
             jPanelPesquisaProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,19 +133,20 @@ public class PesquisaMovel extends javax.swing.JFrame {
                     .addComponent(jButtonPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldPesquisaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanelPesquisaProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonDetalhes1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52))
+                .addGap(42, 42, 42))
         );
 
         getContentPane().add(jPanelPesquisaProduto);
         jPanelPesquisaProduto.setBounds(20, 50, 860, 427);
 
         jLabelPesquisarProduto.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabelPesquisarProduto.setText("Pesquisar Produto");
+        jLabelPesquisarProduto.setText("Pesquisar Movel");
         getContentPane().add(jLabelPesquisarProduto);
         jLabelPesquisarProduto.setBounds(370, 10, 200, 30);
 
@@ -143,8 +156,8 @@ public class PesquisaMovel extends javax.swing.JFrame {
 
     private void jTablePesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablePesquisarMouseClicked
 
-        jButtonDetalhes.setEnabled(true);
-
+        jButtonApagar.setEnabled(true);
+        jButtonDetalhes1.setEnabled(true);
         jButtonEditar.setEnabled(true);
         String nome_movel = ""+jTablePesquisar.getValueAt(jTablePesquisar.getSelectedRow(), 1);
         modelo = (BeansMovel) DaoControl.selecionaMovel(nome_movel);
@@ -173,9 +186,23 @@ public class PesquisaMovel extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonEditarActionPerformed
 
-    private void jButtonDetalhesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetalhesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonDetalhesActionPerformed
+    private void jButtonApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonApagarActionPerformed
+       int resposta = 0;
+        String nome= modelo.getNome();
+        if(modelo!= null && !nome.isEmpty()){
+        resposta = JOptionPane.showConfirmDialog(this.rootPane, "Deseja realmente apagar o Movel "+nome+" ?", "Cuidado!", JOptionPane.YES_NO_OPTION);
+        if (resposta == JOptionPane.YES_OPTION) {
+            DaoControl.excluir(modelo);
+            JOptionPane.showMessageDialog(this.rootPane,nome+ " foi excluido com sucesso!");
+        }
+            
+        }else{    
+        JOptionPane.showMessageDialog(this.rootPane, "Erro ao apagar!\nSelecione um Movel");
+        }    }//GEN-LAST:event_jButtonApagarActionPerformed
+
+    private void jButtonDetalhes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetalhes1ActionPerformed
+
+    }//GEN-LAST:event_jButtonDetalhes1ActionPerformed
     
     
     private void pesquisa(){
@@ -213,8 +240,8 @@ public class PesquisaMovel extends javax.swing.JFrame {
     }    
     public void bloqueiaBotoes(){
 
-        jButtonDetalhes.setEnabled(false);
- 
+        jButtonApagar.setEnabled(false);
+        jButtonDetalhes1.setEnabled(false);
         jButtonEditar.setEnabled(false);
     }
     /**
@@ -256,7 +283,8 @@ public class PesquisaMovel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonDetalhes;
+    private javax.swing.JButton jButtonApagar;
+    private javax.swing.JButton jButtonDetalhes1;
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonPesquisar;
     private javax.swing.JLabel jLabelPesquisarProduto;
