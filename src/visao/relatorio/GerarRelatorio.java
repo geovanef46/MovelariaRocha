@@ -10,7 +10,7 @@ package visao.relatorio;
  * @author geovanef46
  */
 public class GerarRelatorio extends javax.swing.JFrame {
-    Relatorio relatorio = new Relatorio();
+    Relatorio relatorio;
 
     /**
      * Creates new form GerarRelatorio
@@ -102,9 +102,13 @@ public class GerarRelatorio extends javax.swing.JFrame {
             relatorio.setVisible(true);
             relatorio.setResizable(false);
         }else{
-            relatorio.SelecionaTipo(tipo);
-            relatorio.setVisible(true);
-            relatorio.setResizable(false);
+            if(relatorio.isDisplayable()){
+            
+            Relatorio relatorio = new Relatorio();
+            }
+                relatorio = new Relatorio();
+                relatorio.setVisible(true);
+                relatorio.setResizable(false);
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -12,7 +12,7 @@ package modeloBeans.produto;
  */
 public class BeansItem {
     private int codItem;
-    private int qtd;
+    private int qtd = 1;//por default
     private int codProduto;
     private double valor;
 

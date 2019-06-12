@@ -3,6 +3,9 @@ package controle;
 import SistemaDePagamentos.Interface_de_Connexao;
 import SistemaDePagamentos.Controle_pagamentos;
 import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import modeloBeans.produto.BeansItem;
 
 
 /**
@@ -34,4 +37,20 @@ public class GerenciadorDeVendas {
             return listaDesatualizada;//retorna a mais atualizada
         }
 
+        public int pesquisarQtd(int id_movel,List<BeansItem> listaDeItens){
+            if(!listaDeItens.isEmpty()){
+                for (BeansItem item : listaDeItens) {
+                 
+                    if(item.getCodProduto() == id_movel){
+                        
+                    return item.getQtd();
+                    }
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "A lista de Itens está vazia!");
+            }
+            return 1;
+        }
+        
+        
 }

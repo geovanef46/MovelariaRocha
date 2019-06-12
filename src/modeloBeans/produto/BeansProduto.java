@@ -34,7 +34,7 @@ public class BeansProduto {
     }
 
     /**
-     * @return the qtd
+     * @return the qtd em estoque
      */
     public int getQtd() {
         return qtd;

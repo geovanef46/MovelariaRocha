@@ -6,6 +6,7 @@
 package controle;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import modeloBeans.empresa.BeansCliente;
 import modeloBeans.empresa.BeansEmpresa;
 import modeloBeans.empresa.BeansFornecedor;
@@ -55,6 +56,11 @@ public class GerenciadorDeBD {
     public BeansProduto selecionaMovel(String nome) {
 
         return Daocontrol.selecionaMovel(nome);
+    }
+    
+     public BeansProduto selecionaMovel(int id) {
+
+        return Daocontrol.selecionaMovel(id);
     }
 
     //--------------------------------Produto-Materia-Prima------------------------------
@@ -147,11 +153,16 @@ public class GerenciadorDeBD {
      * @return
      */
     public int converterInt(String valor) {
-        int formatado;
+        int formatado = 0;
         if (valor.equals("")) {
             formatado = 0;
         } else {
-            formatado = Integer.valueOf(valor);
+            try {
+                  formatado = Integer.valueOf(valor);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Erro ao converter valores");
+            }
+          
         }
         return formatado;
     }

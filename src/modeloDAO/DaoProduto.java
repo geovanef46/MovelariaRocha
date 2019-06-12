@@ -194,6 +194,33 @@ public class DaoProduto {
         conex.desconecta();
         return modelo;
     }
+        
+           /**
+         * Seleciona um Movel pelo nome
+         * @param nome
+         * @return 
+         */
+        public BeansProduto selecionaMovel(int id){
+        BeansMovel modelo = new BeansMovel();
+        conex.conexao();
+        conex.executaSql("select *from movel where codigo ='"+ id+"'");
+        try {
+            conex.rs.first();
+            modelo.setCodigo(conex.rs.getInt("codigo"));
+            modelo.setNome(conex.rs.getString("nome"));
+            modelo.setQtd(conex.rs.getInt("qtd"));
+            modelo.setCor(conex.rs.getString("cor"));
+            modelo.setDescricao(conex.rs.getString("descricao"));
+            modelo.setMarca(conex.rs.getString("marca"));
+            modelo.setPreco(converterValores(conex.rs.getDouble("preco")));
+            conex.rs.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao selecionar os dados na tabela\n"+ex);
+            return null;
+        }
+        conex.desconecta();
+        return modelo;
+    }
       
         
         /**
