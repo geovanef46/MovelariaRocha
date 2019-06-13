@@ -378,7 +378,7 @@ public class DaoProduto {
      * @param sql
      * @return 
      */
-              public ArrayList PreencherTabela(String sql){
+     public ArrayList PreencherTabela(String sql){
         ArrayList dados = new ArrayList();//linhas
         conex.conexao();
         conex.executaSql(sql);

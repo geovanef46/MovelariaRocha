@@ -14,7 +14,7 @@ Solucionar problemas no metodo atualizaUsuario() no daoFuncionario... adequar no
 Novo Funcionario -> não fechar, no close() //OK continua com o fluxo, nao fecha, dispose()
 
 PesquisarFunc -> apagar e editar na pesquisa //TODO
-A view de Gerente deve ser separada
+A view de Gerente deve ser separada//TODO 
 
 3 - Módulo de producao;ok
 Pesquisar Produto;ok
@@ -28,11 +28,13 @@ Cliente
 Fornecedor
 FormEntradaEmpresa -> Falta atualizar a mascara de CNPJ//inviável para a validacao pretendida
 
+
 5 - Módulo Vendas;
-Vender ok Ainda falta add quantidade
+Vender ok Ainda falta add quantidade //OK
 Pesquisar Produto ok
 Registrar compras ok Ainda tem insconsistencias //TODO
 Add Cliente na view Vendedor //TODO
+Add remocao de estoque apos venda //TODO
 
 
 
@@ -49,7 +51,7 @@ Alterar caminho do Banco
 
 
 8 - Adicionar o Sobre
-9 - Conferir menus 1 a 1
+9 - inserir funcionalidades dos menus 1 a 1
 10 - implementar detalhes de moveis, MP, funcionarios
 
 
@@ -68,6 +70,6 @@ SELECT gerente.CPF FROM gerente join controle on gerente.CPF = controle.gerente_
 
 
 
-
+vendas:
 listProdutos -> lista com (codigo,qtdEmEstoque)
 listItens -> lista com (itens)

@@ -127,7 +127,7 @@ public class AdicionaQtd extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       qtd = jFormattedTextField1.getText();
+      if(!jFormattedTextField1.getText().equals("")) {qtd = jFormattedTextField1.getText();}
        jTextFieldNomeProduto.setText("");
        jFormattedTextField1.setText("");
        dispose();
