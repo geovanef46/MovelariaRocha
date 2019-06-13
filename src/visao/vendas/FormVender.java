@@ -221,7 +221,6 @@ public class FormVender extends javax.swing.JFrame {
         });
 
         jFormattedTextFieldQtd.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#"))));
-        jFormattedTextFieldQtd.setEnabled(false);
         jFormattedTextFieldQtd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jLabelDesconto1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
@@ -270,13 +269,12 @@ public class FormVender extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jFormattedTextFieldPrecoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelVendasLayout.createSequentialGroup()
-                                .addGap(51, 51, 51)
                                 .addComponent(jLabelDesconto)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jFormattedTextFieldDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(91, 91, 91))
                     .addGroup(jPanelVendasLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 761, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButtonCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -441,12 +439,18 @@ public class FormVender extends javax.swing.JFrame {
         }else{
            qtd = DaoVendas.pesquisarQtd(produtoAtivo.getCodigo(), listaDeItens);
            adiciona = String.valueOf(DaoControl.converterInt(adiciona) + qtd);
-           if(produtoAtivo.getQtd() <= (DaoControl.converterInt(adiciona))){
+           if(produtoAtivo.getQtd() >= (DaoControl.converterInt(adiciona))){
            
            modeloItem.setQtd(DaoControl.converterInt(adiciona));
            jFormattedTextFieldQtd.setText(adiciona);
+           }if(produtoAtivo.getQtd() == 0){
+                JOptionPane.showMessageDialog(rootPane, "Está indisponível em estoque!");
+                jFormattedTextFieldQtd.setText("");
+                jFormattedTextFieldQtd.requestFocus();
            }else{
-             JOptionPane.showMessageDialog(rootPane, "Existem apenas "+produtoAtivo.getQtd()+" em estoque!");
+             JOptionPane.showMessageDialog(rootPane, "Existe apenas "+produtoAtivo.getQtd()+" em estoque!");
+             jFormattedTextFieldQtd.setText("");
+                jFormattedTextFieldQtd.requestFocus();
            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -467,17 +471,54 @@ public class FormVender extends javax.swing.JFrame {
     }
 
     private void gerarItem(int codigo) {
-
+        if (codigo != produtoAtivo.getCodigo()) {
             produtoAtivo = (BeansMovel) DaoControl.recuperaProduto(codigo, produtoAtivo);
+        }
+        if (produtoAtivo.getQtd() != 0) {
+            
             modeloItem.setQtd(DaoControl.converterInt(iniciaQtd()));
             modeloItem.setCodProduto(produtoAtivo.getCodigo());
-            int preco =(DaoControl.converterInt(produtoAtivo.getPreco())*modeloItem.getQtd());
-            atualizaPreco(String.valueOf(preco));
-        
-            listaDeItens.add(modeloItem);
+            if (produtoAtivo.getQtd() > modeloItem.getQtd()) {
+                double preco = (DaoControl.converterValores(produtoAtivo.getPreco()) * modeloItem.getQtd());
+                atualizaPreco(DaoControl.converterValores(preco));
 
+                listaDeItens.add(modeloItem);
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Existe apenas "+produtoAtivo.getQtd()+" em estoque!");
+                jFormattedTextFieldQtd.setText("");
+                jFormattedTextFieldQtd.requestFocus();
+            }
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Está indisponível em estoque!");
+            jFormattedTextFieldQtd.setText("");
+                jFormattedTextFieldQtd.requestFocus();
+        }
+        verificaListaCompra();
     }
 
+    private void verificaListaCompra(){
+        int cont = 0;
+        ArrayList indexRemove = new ArrayList();
+        for (BeansItem item : listaDeItens) {
+            for (Object dadoTabela : this.dados) {
+                cont++;
+                if(cont == 7){cont = 0;}
+                if(dadoTabela.toString().equals(item.getCodProduto())){
+                    indexRemove.add(dados.indexOf(dadoTabela));
+                }
+            }
+           
+        }
+        if(!indexRemove.isEmpty()){
+            for (Object object : indexRemove) {
+                System.out.println(this.dados.remove(DaoControl.converterInt(object.toString())));  
+            }
+            this.atualizarTabela();
+        }
+        
+    }
+    
+    
     private boolean receberCompra(BeansCliente modeloLoja, Date dataHoje, List listItens) {
         if (listItens != null && modeloLoja != null && listItens.size() > 0) {
 
@@ -490,6 +531,30 @@ public class FormVender extends javax.swing.JFrame {
         } else {
             return false;
         }
+
+    }
+    
+    private void atualizarTabela(){
+
+        String[] colunas = new String[]{"Código", "Nome", "Cor", "Quantidade em Estoque", "Marca", "Preço Unitário"};//colunas
+
+        ModeloTabela modeloTable = new ModeloTabela(this.dados, colunas);
+        jTableVendas.setModel(modeloTable);
+        jTableVendas.getColumnModel().getColumn(0).setPreferredWidth(80);
+        jTableVendas.getColumnModel().getColumn(0).setResizable(false);
+        jTableVendas.getColumnModel().getColumn(1).setPreferredWidth(150);
+        jTableVendas.getColumnModel().getColumn(1).setResizable(false);
+        jTableVendas.getColumnModel().getColumn(2).setPreferredWidth(120);
+        jTableVendas.getColumnModel().getColumn(2).setResizable(false);
+        jTableVendas.getColumnModel().getColumn(3).setPreferredWidth(120);
+        jTableVendas.getColumnModel().getColumn(3).setResizable(false);
+        jTableVendas.getColumnModel().getColumn(4).setPreferredWidth(140);
+        jTableVendas.getColumnModel().getColumn(4).setResizable(false);
+        jTableVendas.getColumnModel().getColumn(5).setPreferredWidth(120);
+        jTableVendas.getColumnModel().getColumn(5).setResizable(false);
+        jTableVendas.getTableHeader().setReorderingAllowed(false);
+        jTableVendas.setAutoResizeMode(jTableVendas.AUTO_RESIZE_OFF);
+        jTableVendas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
     }
 
@@ -551,7 +616,7 @@ public class FormVender extends javax.swing.JFrame {
     public void adicionaProduto(BeansMovel modelo) {
         PreencherTabela("select *from movel where codigo ='" + modelo.getCodigo() + "'");
         produtoAtivo = modelo;        
-        listaDeProdutos.put(modelo.getCodigo(),produtoAtivo.getQtd());
+        listaDeProdutos.put(produtoAtivo.getCodigo(),produtoAtivo.getQtd());
         gerarItem(modelo.getCodigo());
     }
 

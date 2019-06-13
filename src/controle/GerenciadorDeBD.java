@@ -18,11 +18,9 @@ import modeloDAO.DaoProduto;
 import modeloDAO.DaoFuncionario;
 import modeloDAO.DaoEmpresa;
 
-
 /**
- * Esta Classe tem o papel de uma Fachada
- * agregando os métodos de diversas entidadesBD
- * e disponibilizando-os.
+ * Esta Classe tem o papel de uma Fachada agregando os métodos de diversas
+ * entidadesBD e disponibilizando-os.
  *
  * @author geovanef46
  */
@@ -57,8 +55,8 @@ public class GerenciadorDeBD {
 
         return Daocontrol.selecionaMovel(nome);
     }
-    
-     public BeansProduto selecionaMovel(int id) {
+
+    public BeansProduto selecionaMovel(int id) {
 
         return Daocontrol.selecionaMovel(id);
     }
@@ -102,18 +100,19 @@ public class GerenciadorDeBD {
     public void salvar(BeansFuncionario modelo) {
         DaoFunc.salvar(modelo);
     }
-    
-    public BeansFuncionario selecionaFunc(String nome){
-       return DaoFunc.buscaFuncionarioPorNome(nome);
+
+    public BeansFuncionario selecionaFunc(String nome) {
+        return DaoFunc.buscaFuncionarioPorNome(nome);
     }
-    
-    public BeansFuncionario selecionaFunc(BeansFuncionario func){
-       return DaoFunc.buscaFuncionarioPorNome(func);
+
+    public BeansFuncionario selecionaFunc(BeansFuncionario func) {
+        return DaoFunc.buscaFuncionarioPorNome(func);
     }
-    
-     public ArrayList PreencherTabelaFunc(String sql) {
+
+    public ArrayList PreencherTabelaFunc(String sql) {
         return DaoFunc.PreencherTabelaFunc(sql);
     }
+
     //--------------------------------Empresa--------------------------------------------------
     public BeansFornecedor buscaLojaPorNome(BeansFornecedor modelo) {
         return DaoLoja.buscaLojaPorNome(modelo);
@@ -154,15 +153,16 @@ public class GerenciadorDeBD {
      */
     public int converterInt(String valor) {
         int formatado = 0;
-        if (valor.equals("")) {
+
+        if (valor == null || valor.equals("") || valor.isEmpty()) {
             formatado = 0;
         } else {
             try {
-                  formatado = Integer.valueOf(valor);
+                formatado = Integer.valueOf(valor);
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Erro ao converter valores");
             }
-          
+
         }
         return formatado;
     }
