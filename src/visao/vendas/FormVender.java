@@ -448,7 +448,7 @@ public class FormVender extends javax.swing.JFrame {
                 jFormattedTextFieldQtd.setText("");
                 jFormattedTextFieldQtd.requestFocus();
            }else{
-             JOptionPane.showMessageDialog(rootPane, "Existe apenas "+produtoAtivo.getQtd()+" em estoque!");
+             JOptionPane.showMessageDialog(rootPane, "Existe "+produtoAtivo.getQtd()+" item  em estoque!");
              jFormattedTextFieldQtd.setText("");
                 jFormattedTextFieldQtd.requestFocus();
            }
@@ -475,23 +475,23 @@ public class FormVender extends javax.swing.JFrame {
             produtoAtivo = (BeansMovel) DaoControl.recuperaProduto(codigo, produtoAtivo);
         }
         if (produtoAtivo.getQtd() != 0) {
-            
+            PreencherTabela("select *from movel where codigo ='" + codigo + "'");
             modeloItem.setQtd(DaoControl.converterInt(iniciaQtd()));
             modeloItem.setCodProduto(produtoAtivo.getCodigo());
-            if (produtoAtivo.getQtd() > modeloItem.getQtd()) {
+            if (produtoAtivo.getQtd() >= modeloItem.getQtd()) {
                 double preco = (DaoControl.converterValores(produtoAtivo.getPreco()) * modeloItem.getQtd());
                 atualizaPreco(DaoControl.converterValores(preco));
 
                 listaDeItens.add(modeloItem);
             }else{
-                JOptionPane.showMessageDialog(rootPane, "Existe apenas "+produtoAtivo.getQtd()+" em estoque!");
+                JOptionPane.showMessageDialog(rootPane, "Existe "+produtoAtivo.getQtd()+" item  em estoque!");
                 jFormattedTextFieldQtd.setText("");
                 jFormattedTextFieldQtd.requestFocus();
             }
         }else{
             JOptionPane.showMessageDialog(rootPane, "Está indisponível em estoque!");
             jFormattedTextFieldQtd.setText("");
-                jFormattedTextFieldQtd.requestFocus();
+            jButtonIncluirProduto.requestFocus();
         }
         verificaListaCompra();
     }
@@ -502,10 +502,13 @@ public class FormVender extends javax.swing.JFrame {
         for (BeansItem item : listaDeItens) {
             for (Object dadoTabela : this.dados) {
                 cont++;
-                if(cont == 7){cont = 0;}
-                if(dadoTabela.toString().equals(item.getCodProduto())){
+                if(cont == 7){
+                    cont = 0;
+                    if(dadoTabela.toString().equals(item.getCodProduto())){
                     indexRemove.add(dados.indexOf(dadoTabela));
                 }
+                }
+                
             }
            
         }
@@ -589,7 +592,7 @@ public class FormVender extends javax.swing.JFrame {
     }
 
     public void iniciaVenda(BeansMovel modelo) {
-        PreencherTabela("select *from movel where codigo ='" + modelo.getCodigo() + "'");
+        
         jFormattedTextFieldPrecoTotal.setText(modelo.getPreco());
         produtoAtivo = modelo;
         listaDeProdutos.put(modelo.getCodigo(),produtoAtivo.getQtd());
@@ -614,7 +617,7 @@ public class FormVender extends javax.swing.JFrame {
     }
 
     public void adicionaProduto(BeansMovel modelo) {
-        PreencherTabela("select *from movel where codigo ='" + modelo.getCodigo() + "'");
+       
         produtoAtivo = modelo;        
         listaDeProdutos.put(produtoAtivo.getCodigo(),produtoAtivo.getQtd());
         gerarItem(modelo.getCodigo());
