@@ -68,6 +68,8 @@ SQL:
 seleciona o funcionario.gerente que esta no controle
 SELECT gerente.CPF FROM gerente join controle on gerente.CPF = controle.gerente_CPF;
 
+SELECT funcionario.CPF FROM funcionario join controle on funcionario.CPF = controle.funcionario_CPF where id=" + id;
+
 
 
 vendas:

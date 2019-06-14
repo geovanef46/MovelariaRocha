@@ -33,7 +33,25 @@ public class DaoRelatorio {
                 
             } while (conex.rs.next());}
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao preencher a tabela!"+ex);
+            JOptionPane.showMessageDialog(null, "Erro ao preencher a tabela de entrada"+ex);
+        }
+         conex.desconecta();
+        return dados;
+    }
+
+    public ArrayList PreencherRelatorioCompras(String sql) {
+        ArrayList dados = new ArrayList();//linhas
+        conex.conexao();
+        conex.executaSql(sql);
+        
+        try {
+            if(conex.rs.first()==true){
+            do {                
+                dados.add(new Object[]{conex.rs.getString("cliente_CNPJ"),conex.rs.getString("data"),conex.rs.getInt("codComp"), conex.rs.getDouble("valorTotal"),conex.rs.getString("vendedor_CPF")});
+                
+            } while (conex.rs.next());}
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao preencher a tabela de Compras por Cliente"+ex);
         }
          conex.desconecta();
         return dados;

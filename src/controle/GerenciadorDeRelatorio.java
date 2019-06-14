@@ -25,4 +25,8 @@ public class GerenciadorDeRelatorio {
 //
 //    }
     
+    public ArrayList PreencherRelatorioCompras(String sql){
+        return DaoRelatorio.PreencherRelatorioCompras(sql);
+    }
+    
 }

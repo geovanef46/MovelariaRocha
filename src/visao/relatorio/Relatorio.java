@@ -6,9 +6,9 @@
 package visao.relatorio;
 
 import controle.GerenciadorDeRelatorio;
-import java.sql.SQLException;
+
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
+
 import javax.swing.ListSelectionModel;
 import modeloBeans.ModeloTabela;
 
@@ -109,11 +109,11 @@ public class Relatorio extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(jLabelqtdEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)))
-                .addContainerGap(329, Short.MAX_VALUE))
+                .addContainerGap(341, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 892, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 916, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -126,16 +126,16 @@ public class Relatorio extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabelRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 342, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 354, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelTipoDeRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelqtdEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(94, 94, 94)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(94, Short.MAX_VALUE)))
+                    .addGap(99, 99, 99)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(106, Short.MAX_VALUE)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(31, 31, 31)
@@ -169,12 +169,14 @@ public class Relatorio extends javax.swing.JFrame {
     }//GEN-LAST:event_jTableRelatorioMouseClicked
     
     public void SelecionaTipo(String tipo){
+        
+       
         if (tipo.equalsIgnoreCase("Fluxo de Entrada de Moveis")) {
-            PreencherTabela("select *from movel order by codigo");
+            PreencherTabelaEntrada("select *from movel order by codigo");
             jLabelTipoDeRelatorio.setText("Fluxo de Entrada");
             
         }if (tipo.equalsIgnoreCase("Compras por Cliente")) {
-            PreencherTabela("select *from compra order by codComp");
+            PreencherTabelaCompras("SELECT * FROM compra order by cliente_CNPJ");
             
         }if (tipo.equalsIgnoreCase("Fluxo de Saida de Moveis")) {
             
@@ -185,22 +187,42 @@ public class Relatorio extends javax.swing.JFrame {
         }
     }
     
-    public void PreencherTabela(String sql){
-              ArrayList dados = DaoRelatorio.PreencherRelatorioEntrada(sql);
-          String[] colunas = new String[]{"Código", "Nome", "Cor","Quantidade","Marca","Preço"};//colunas
+    public void PreencherTabelaCompras(String sql){
+        
+          ArrayList dados = DaoRelatorio.PreencherRelatorioCompras(sql);
+          String[] colunas = new String[]{"CNPJ do Cliente", "Data da Compra","Código", "Valor Total","CPF do Vendedor"};//colunas
            modeloTable = new ModeloTabela(dados, colunas);  
         jTableRelatorio.setModel(modeloTable);
-        jTableRelatorio.getColumnModel().getColumn(0).setPreferredWidth(70);
+        jTableRelatorio.getColumnModel().getColumn(0).setPreferredWidth(183);
         jTableRelatorio.getColumnModel().getColumn(0).setResizable(false);
-        jTableRelatorio.getColumnModel().getColumn(1).setPreferredWidth(130);
+        jTableRelatorio.getColumnModel().getColumn(1).setPreferredWidth(183);
         jTableRelatorio.getColumnModel().getColumn(1).setResizable(false);
-        jTableRelatorio.getColumnModel().getColumn(2).setPreferredWidth(110);
+        jTableRelatorio.getColumnModel().getColumn(2).setPreferredWidth(183);
         jTableRelatorio.getColumnModel().getColumn(2).setResizable(false);
-        jTableRelatorio.getColumnModel().getColumn(3).setPreferredWidth(105);
+        jTableRelatorio.getColumnModel().getColumn(3).setPreferredWidth(183);
         jTableRelatorio.getColumnModel().getColumn(3).setResizable(false);
-        jTableRelatorio.getColumnModel().getColumn(4).setPreferredWidth(105);
+        jTableRelatorio.getColumnModel().getColumn(4).setPreferredWidth(183);
         jTableRelatorio.getColumnModel().getColumn(4).setResizable(false);
-        jTableRelatorio.getColumnModel().getColumn(5).setPreferredWidth(100);
+        jTableRelatorio.getTableHeader().setReorderingAllowed(false);
+        jTableRelatorio.setAutoResizeMode(jTableRelatorio.AUTO_RESIZE_OFF);
+        jTableRelatorio.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    }
+    public void PreencherTabelaEntrada(String sql){
+              ArrayList dados = DaoRelatorio.PreencherRelatorioEntrada(sql);
+          String[] colunas = new String[]{"Código", "Nome", "Cor","Quantidade em Estoque","Marca","Preço"};//colunas
+           modeloTable = new ModeloTabela(dados, colunas);  
+        jTableRelatorio.setModel(modeloTable);
+        jTableRelatorio.getColumnModel().getColumn(0).setPreferredWidth(100);
+        jTableRelatorio.getColumnModel().getColumn(0).setResizable(false);
+        jTableRelatorio.getColumnModel().getColumn(1).setPreferredWidth(170);
+        jTableRelatorio.getColumnModel().getColumn(1).setResizable(false);
+        jTableRelatorio.getColumnModel().getColumn(2).setPreferredWidth(152);
+        jTableRelatorio.getColumnModel().getColumn(2).setResizable(false);
+        jTableRelatorio.getColumnModel().getColumn(3).setPreferredWidth(170);
+        jTableRelatorio.getColumnModel().getColumn(3).setResizable(false);
+        jTableRelatorio.getColumnModel().getColumn(4).setPreferredWidth(152);
+        jTableRelatorio.getColumnModel().getColumn(4).setResizable(false);
+        jTableRelatorio.getColumnModel().getColumn(5).setPreferredWidth(164);
         jTableRelatorio.getColumnModel().getColumn(5).setResizable(false);
         jTableRelatorio.getTableHeader().setReorderingAllowed(false);
         jTableRelatorio.setAutoResizeMode(jTableRelatorio.AUTO_RESIZE_OFF);

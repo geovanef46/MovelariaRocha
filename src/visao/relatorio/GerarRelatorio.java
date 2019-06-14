@@ -104,11 +104,17 @@ public class GerarRelatorio extends javax.swing.JFrame {
         }else{
             if(relatorio.isDisplayable()){
             
-            Relatorio relatorio = new Relatorio();
-            }
-                relatorio = new Relatorio();
+            Relatorio relat = new Relatorio();
+            relat.SelecionaTipo(tipo);
+            relat.setVisible(true);
+            relat.setResizable(false);
+
+            }else{
+                relatorio.SelecionaTipo(tipo);
                 relatorio.setVisible(true);
                 relatorio.setResizable(false);
+            }
+            
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
