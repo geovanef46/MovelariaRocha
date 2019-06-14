@@ -61,11 +61,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jInternalFrameBemVindo = new javax.swing.JInternalFrame();
         jLabelTituloInterno = new javax.swing.JLabel();
         jPanelInterno = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jButtonAdicionar = new javax.swing.JButton();
-        jButtonPesquisar = new javax.swing.JButton();
-        jButtonVender = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jButtonPesquisarFuncionario = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -75,9 +70,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButtonGerarRelatorio = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jButtonAdicionarLoja = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         jLabelFundoTelaPrincipal = new javax.swing.JLabel();
         jLabelUsuario = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -92,6 +84,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("ADMINISTRADOR");
         setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 FechouJanelaPrincipal(evt);
@@ -105,7 +99,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jInternalFrameBemVindo.setTitle("Bem - Vindo");
         jInternalFrameBemVindo.setFocusTraversalPolicyProvider(true);
         jInternalFrameBemVindo.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jInternalFrameBemVindo.setFrameIcon(null);
         try {
             jInternalFrameBemVindo.setSelected(true);
         } catch (java.beans.PropertyVetoException e1) {
@@ -123,55 +116,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanelInterno.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanelInterno.setLayout(null);
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        jPanel3.setLayout(null);
-
-        jButtonAdicionar.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        jButtonAdicionar.setForeground(new java.awt.Color(5, 5, 19));
-        jButtonAdicionar.setText("Novo");
-        jButtonAdicionar.setToolTipText("Adicionar um Produto ao Estoque");
-        jButtonAdicionar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAdicionarActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButtonAdicionar);
-        jButtonAdicionar.setBounds(20, 50, 120, 50);
-
-        jButtonPesquisar.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        jButtonPesquisar.setForeground(new java.awt.Color(5, 5, 19));
-        jButtonPesquisar.setText("Pesquisar");
-        jButtonPesquisar.setToolTipText("Pesquisar um produto");
-        jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPesquisarActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButtonPesquisar);
-        jButtonPesquisar.setBounds(20, 140, 120, 50);
-
-        jButtonVender.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        jButtonVender.setForeground(new java.awt.Color(5, 5, 19));
-        jButtonVender.setText("Vender");
-        jButtonVender.setToolTipText("Vender um produto");
-        jButtonVender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVenderActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButtonVender);
-        jButtonVender.setBounds(20, 230, 120, 50);
-
-        jLabel4.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(5, 5, 19));
-        jLabel4.setText("Móveis:");
-        jPanel3.add(jLabel4);
-        jLabel4.setBounds(60, 10, 80, 30);
-
-        jPanelInterno.add(jPanel3);
-        jPanel3.setBounds(10, 10, 170, 320);
-
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         jPanel1.setLayout(null);
@@ -185,13 +129,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonPesquisarFuncionario);
-        jButtonPesquisarFuncionario.setBounds(40, 230, 130, 50);
+        jButtonPesquisarFuncionario.setBounds(60, 240, 130, 50);
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(5, 5, 19));
         jLabel1.setText("Funcionários:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(50, 10, 110, 30);
+        jLabel1.setBounds(70, 20, 110, 30);
 
         jButtonNovoFuncionario.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonNovoFuncionario.setForeground(new java.awt.Color(5, 5, 19));
@@ -202,17 +146,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonNovoFuncionario);
-        jButtonNovoFuncionario.setBounds(40, 50, 130, 50);
+        jButtonNovoFuncionario.setBounds(60, 60, 130, 50);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(5, 5, 19));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Crystal_Clear_app_Login_Manager.png"))); // NOI18N
         jLabel3.setText("  ");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(30, 70, 150, 190);
+        jLabel3.setBounds(50, 80, 150, 190);
 
         jPanelInterno.add(jPanel1);
-        jPanel1.setBounds(360, 10, 190, 320);
+        jPanel1.setBounds(60, 10, 250, 320);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
@@ -222,7 +166,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(5, 5, 19));
         jLabel2.setText("Relatórios:");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(50, 10, 100, 30);
+        jLabel2.setBounds(90, 20, 100, 30);
 
         jButtonGerarRelatorio.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonGerarRelatorio.setForeground(new java.awt.Color(5, 5, 19));
@@ -233,41 +177,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButtonGerarRelatorio);
-        jButtonGerarRelatorio.setBounds(30, 230, 120, 50);
+        jButtonGerarRelatorio.setBounds(70, 240, 120, 50);
 
         jLabel5.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(5, 5, 19));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/relatorio.png"))); // NOI18N
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(20, 50, 150, 160);
+        jLabel5.setBounds(60, 60, 150, 160);
 
         jPanelInterno.add(jPanel2);
-        jPanel2.setBounds(550, 10, 190, 320);
-
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        jPanel4.setLayout(null);
-
-        jButtonAdicionarLoja.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        jButtonAdicionarLoja.setForeground(new java.awt.Color(5, 5, 19));
-        jButtonAdicionarLoja.setText("Novo");
-        jButtonAdicionarLoja.setToolTipText("Adicionar um novo Cliente");
-        jButtonAdicionarLoja.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAdicionarLojaActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButtonAdicionarLoja);
-        jButtonAdicionarLoja.setBounds(30, 50, 120, 50);
-
-        jLabel6.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(5, 5, 19));
-        jLabel6.setText("Lojas:");
-        jPanel4.add(jLabel6);
-        jLabel6.setBounds(70, 10, 80, 30);
-
-        jPanelInterno.add(jPanel4);
-        jPanel4.setBounds(180, 10, 180, 320);
+        jPanel2.setBounds(440, 10, 250, 320);
 
         jInternalFrameBemVindo.getContentPane().add(jPanelInterno);
         jPanelInterno.setBounds(10, 40, 750, 340);
@@ -283,7 +202,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelFundoTelaPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         jLabelFundoTelaPrincipal.setEnabled(false);
         getContentPane().add(jLabelFundoTelaPrincipal);
-        jLabelFundoTelaPrincipal.setBounds(0, 0, 840, 500);
+        jLabelFundoTelaPrincipal.setBounds(20, 10, 800, 500);
 
         jLabelUsuario.setText("Bem - Vindo");
         jLabelUsuario.setToolTipText("Usuário Ativo");
@@ -336,7 +255,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        setSize(new java.awt.Dimension(858, 573));
+        setSize(new java.awt.Dimension(853, 575));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -397,41 +316,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonNovoFuncionarioActionPerformed
 
-    private void jButtonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVenderActionPerformed
-//        if (novaVenda == null) {
-//            novaVenda = new FormVender();
-//            novaVenda.setVisible(true);
-//            novaVenda.setResizable(false);
-//        }else{
-//            novaVenda.setVisible(true);
-//            novaVenda.setResizable(false);
-//        }
-    }//GEN-LAST:event_jButtonVenderActionPerformed
-
-    private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
-        if (novaPesquisa == null) {
-            novaPesquisa = new PesquisaMovel();
-            novaPesquisa.setVisible(true);
-            novaPesquisa.setResizable(false);
-        }else{
-            novaPesquisa.setVisible(true);
-            novaPesquisa.setResizable(false);
-        }
-
-    }//GEN-LAST:event_jButtonPesquisarActionPerformed
-
-    private void jButtonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarActionPerformed
-        if (entradaMovel == null) {
-            entradaMovel = new FormEntradaMovel();
-            entradaMovel.setVisible(true);
-            entradaMovel.setResizable(false);
-        }else{
-            entradaMovel.setVisible(true);
-            entradaMovel.setResizable(false);
-        }
-
-    }//GEN-LAST:event_jButtonAdicionarActionPerformed
-
     private void jButtonGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarRelatorioActionPerformed
 // 
 //        if (gerar == null) {
@@ -443,10 +327,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 //            gerar.setResizable(false);
 //        }
     }//GEN-LAST:event_jButtonGerarRelatorioActionPerformed
-
-    private void jButtonAdicionarLojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarLojaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAdicionarLojaActionPerformed
 
     private void FechouJanelaPrincipal(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_FechouJanelaPrincipal
         TelaLogin.tela.setVisible(true);
@@ -495,20 +375,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAdicionar;
-    private javax.swing.JButton jButtonAdicionarLoja;
     private javax.swing.JButton jButtonGerarRelatorio;
     private javax.swing.JButton jButtonNovoFuncionario;
-    private javax.swing.JButton jButtonPesquisar;
     private javax.swing.JButton jButtonPesquisarFuncionario;
-    private javax.swing.JButton jButtonVender;
     private javax.swing.JInternalFrame jInternalFrameBemVindo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelFundoTelaPrincipal;
     private javax.swing.JLabel jLabelTituloInterno;
     private javax.swing.JLabel jLabelUsuario;
@@ -522,8 +396,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuSobre;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanelInterno;
     // End of variables declaration//GEN-END:variables
 }
