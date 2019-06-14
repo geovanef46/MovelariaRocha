@@ -58,10 +58,9 @@ public class Relatorio extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableRelatorio = new javax.swing.JTable();
-        jLabelRelatorio = new javax.swing.JLabel();
-        jLabelTipoDeRelatorio = new javax.swing.JLabel();
-        jLabelTipoDeRelatorio1 = new javax.swing.JLabel();
-        jLabelqtdEstoque = new javax.swing.JLabel();
+        jLabelTipoRelatorio = new javax.swing.JLabel();
+        jLabelInformacao = new javax.swing.JLabel();
+        jLabelValorAExibir = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Relatorio");
@@ -86,15 +85,13 @@ public class Relatorio extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTableRelatorio);
 
-        jLabelRelatorio.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-        jLabelRelatorio.setText("Relatório");
+        jLabelTipoRelatorio.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+        jLabelTipoRelatorio.setText("Relatório");
 
-        jLabelTipoDeRelatorio.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-        jLabelTipoDeRelatorio.setText("Quantidade Em Estoque:");
+        jLabelInformacao.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+        jLabelInformacao.setText("Quantidade Em Estoque:");
 
-        jLabelTipoDeRelatorio1.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-
-        jLabelqtdEstoque.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+        jLabelValorAExibir.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,45 +99,34 @@ public class Relatorio extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(144, 144, 144)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelTipoRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabelTipoDeRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabelInformacao, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
-                        .addComponent(jLabelqtdEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)))
-                .addContainerGap(341, Short.MAX_VALUE))
+                        .addComponent(jLabelValorAExibir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(116, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 916, Short.MAX_VALUE)
                     .addContainerGap()))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(271, 271, 271)
-                    .addComponent(jLabelTipoDeRelatorio1, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
-                    .addGap(22, 22, 22)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabelRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 354, Short.MAX_VALUE)
+                .addGap(16, 16, 16)
+                .addComponent(jLabelTipoRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 340, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelTipoDeRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelqtdEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelInformacao, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelValorAExibir, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(99, 99, 99)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(106, Short.MAX_VALUE)))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(31, 31, 31)
-                    .addComponent(jLabelTipoDeRelatorio1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(401, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -157,7 +143,7 @@ public class Relatorio extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(23, 23, 23))
         );
 
         setSize(new java.awt.Dimension(954, 540));
@@ -167,22 +153,28 @@ public class Relatorio extends javax.swing.JFrame {
     private void jTableRelatorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableRelatorioMouseClicked
         
     }//GEN-LAST:event_jTableRelatorioMouseClicked
-    
+
     public void SelecionaTipo(String tipo){
         
        
-        if (tipo.equalsIgnoreCase("Fluxo de Entrada de Moveis")) {
+        if (tipo.equalsIgnoreCase("Fluxo de Entrada de Moveis")) {//ok
             PreencherTabelaEntrada("select *from movel order by codigo");
-            jLabelTipoDeRelatorio.setText("Fluxo de Entrada");
+            jLabelTipoRelatorio.setText("Relatorio de Fluxo de Entrada");
             
-        }if (tipo.equalsIgnoreCase("Compras por Cliente")) {
+            
+        }if (tipo.equalsIgnoreCase("Compras por Cliente")) {  //esta gerando apenas os CPF e CNPJ
             PreencherTabelaCompras("SELECT * FROM compra order by cliente_CNPJ");
+            jLabelTipoRelatorio.setText("Relatorio de Compras por Cliente");
             
-        }if (tipo.equalsIgnoreCase("Fluxo de Saida de Moveis")) {
+        }if (tipo.equalsIgnoreCase("Fluxo de Saida de Moveis")) {//Analizar quais moveis(NOME) foram vendidos mensalmente, diariamente, semanalmente + (QUANTIDADE)
+             PreencherTabelaCompras("SELECT nome FROM moveis order ");
+            jLabelTipoRelatorio.setText("Relatorio de Fluxo de Saida de Moveis");
             
-        }if (tipo.equalsIgnoreCase("Compras por Periodo")) {
+        }if (tipo.equalsIgnoreCase("Compras por Periodo")) {//Analizar quantos moveis(QUANTIDADE GERAL) foram vendidos mensalmente, diariamente, semanalmente + (VALOR TOTAL)
             
-        }if (tipo.equalsIgnoreCase("Mais Vendido")) {
+        }if (tipo.equalsIgnoreCase("Fluxo de Caixa")) {//Analizar a soma de valores das compras por periodo , dia , semana, mes
+            
+        }if (tipo.equalsIgnoreCase("Mais Vendidos")) {//Analizar quais moveis(NOME) mais vendidos (QUANTIDADE) mensal
             
         }
     }
@@ -266,10 +258,9 @@ public class Relatorio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabelRelatorio;
-    private javax.swing.JLabel jLabelTipoDeRelatorio;
-    private javax.swing.JLabel jLabelTipoDeRelatorio1;
-    private javax.swing.JLabel jLabelqtdEstoque;
+    private javax.swing.JLabel jLabelInformacao;
+    private javax.swing.JLabel jLabelTipoRelatorio;
+    private javax.swing.JLabel jLabelValorAExibir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableRelatorio;

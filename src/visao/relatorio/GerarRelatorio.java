@@ -38,7 +38,7 @@ public class GerarRelatorio extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jComboBox1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fluxo de Entrada de Moveis", "Fluxo de Saida de Moveis", "Compras por Cliente", "Compras por Periodo", "Mais Vendido", "Menos Vendido", "Fluxo de Caixa" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fluxo de Entrada de Moveis", "Fluxo de Saida de Moveis", "Compras por Cliente", "Compras por Periodo", "Mais Vendidos", "Fluxo de Caixa" }));
         jComboBox1.setToolTipText("Seleciona o Relatório que deseja");
 
         jButton1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
@@ -101,6 +101,7 @@ public class GerarRelatorio extends javax.swing.JFrame {
             relatorio.SelecionaTipo(tipo);
             relatorio.setVisible(true);
             relatorio.setResizable(false);
+                    
         }else{
             if(relatorio.isDisplayable()){
             
@@ -108,11 +109,12 @@ public class GerarRelatorio extends javax.swing.JFrame {
             relat.SelecionaTipo(tipo);
             relat.setVisible(true);
             relat.setResizable(false);
-
+                
             }else{
                 relatorio.SelecionaTipo(tipo);
                 relatorio.setVisible(true);
                 relatorio.setResizable(false);
+                
             }
             
         }
