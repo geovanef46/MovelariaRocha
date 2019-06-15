@@ -67,47 +67,76 @@ public class FormEntradaFuncionario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Novo Funcionario");
+        getContentPane().setLayout(null);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
         jLabel1.setText("Nome:");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(10, 40, 44, 15);
 
         jTextFieldNome.setMinimumSize(new java.awt.Dimension(4, 25));
+        jPanel1.add(jTextFieldNome);
+        jTextFieldNome.setBounds(60, 30, 686, 36);
 
         jLabel2.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
         jLabel2.setText("CPF:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(10, 85, 31, 20);
 
         jTextFieldNomeRua.setMinimumSize(new java.awt.Dimension(4, 25));
+        jPanel1.add(jTextFieldNomeRua);
+        jTextFieldNomeRua.setBounds(260, 80, 486, 33);
 
         try {
             jFormattedTextFieldCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextFieldCPF.setToolTipText("Insira o CPF, apenas numeros!");
         jFormattedTextFieldCPF.setMinimumSize(new java.awt.Dimension(4, 25));
+        jPanel1.add(jFormattedTextFieldCPF);
+        jFormattedTextFieldCPF.setBounds(60, 80, 145, 29);
 
         jLabel3.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
         jLabel3.setText("Rua:");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(220, 90, 31, 15);
 
         jLabel4.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
         jLabel4.setText("Bairro");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(120, 130, 45, 15);
 
         jTextFieldNomeBairro.setMinimumSize(new java.awt.Dimension(4, 25));
+        jPanel1.add(jTextFieldNomeBairro);
+        jTextFieldNomeBairro.setBounds(180, 120, 145, 33);
 
         jLabel5.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
         jLabel5.setText("Cidade:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(330, 130, 52, 15);
 
         jTextFieldNomeRuaCidade.setMinimumSize(new java.awt.Dimension(4, 25));
+        jPanel1.add(jTextFieldNomeRuaCidade);
+        jTextFieldNomeRuaCidade.setBounds(390, 120, 357, 37);
 
         jLabel6.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
         jLabel6.setText("Telefone Fixo:");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(10, 180, 97, 15);
 
         jLabel7.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
         jLabel7.setText("Nº:");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(10, 130, 21, 15);
 
         jFormattedTextFieldNumero.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#00"))));
         jFormattedTextFieldNumero.setMinimumSize(new java.awt.Dimension(4, 25));
+        jPanel1.add(jFormattedTextFieldNumero);
+        jFormattedTextFieldNumero.setBounds(60, 120, 39, 29);
 
         try {
             jFormattedTextFieldTelefone01.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#########")));
@@ -115,9 +144,13 @@ public class FormEntradaFuncionario extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         jFormattedTextFieldTelefone01.setMinimumSize(new java.awt.Dimension(4, 25));
+        jPanel1.add(jFormattedTextFieldTelefone01);
+        jFormattedTextFieldTelefone01.setBounds(120, 170, 130, 30);
 
         jLabel8.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
         jLabel8.setText("Celular:");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(50, 220, 55, 15);
 
         try {
             jFormattedTextFieldTelefone02.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#########")));
@@ -125,6 +158,13 @@ public class FormEntradaFuncionario extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         jFormattedTextFieldTelefone02.setMinimumSize(new java.awt.Dimension(4, 25));
+        jFormattedTextFieldTelefone02.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldTelefone02ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jFormattedTextFieldTelefone02);
+        jFormattedTextFieldTelefone02.setBounds(120, 210, 130, 32);
 
         jButtonSalvar.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
         jButtonSalvar.setText("Salvar");
@@ -133,6 +173,8 @@ public class FormEntradaFuncionario extends javax.swing.JFrame {
                 jButtonSalvarActionPerformed(evt);
             }
         });
+        jPanel1.add(jButtonSalvar);
+        jButtonSalvar.setBounds(620, 430, 109, 53);
 
         jButtonCriaLogin.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
         jButtonCriaLogin.setText("Criar Login");
@@ -142,6 +184,8 @@ public class FormEntradaFuncionario extends javax.swing.JFrame {
                 jButtonCriaLoginActionPerformed(evt);
             }
         });
+        jPanel1.add(jButtonCriaLogin);
+        jButtonCriaLogin.setBounds(310, 330, 169, 53);
 
         jButtonCancelar.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
         jButtonCancelar.setText("Cancelar");
@@ -150,153 +194,31 @@ public class FormEntradaFuncionario extends javax.swing.JFrame {
                 jButtonCancelarActionPerformed(evt);
             }
         });
+        jPanel1.add(jButtonCancelar);
+        jButtonCancelar.setBounds(460, 430, 109, 53);
 
         jComboBoxFuncao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "OP_PRODUCAO", "VENDEDOR", "GERENTE" }));
+        jPanel1.add(jComboBoxFuncao);
+        jComboBoxFuncao.setBounds(270, 280, 250, 25);
 
         jLabel9.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
         jLabel9.setText("Funcao:");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(360, 260, 54, 15);
 
         jTextFieldCEP.setMinimumSize(new java.awt.Dimension(4, 25));
+        jPanel1.add(jTextFieldCEP);
+        jTextFieldCEP.setBounds(390, 170, 145, 33);
 
         jLabel10.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
-        jLabel10.setText("CEP");
+        jLabel10.setText("CEP:");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(350, 180, 40, 15);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldNomeRua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jFormattedTextFieldNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldNomeBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldNomeRuaCidade, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jFormattedTextFieldTelefone01, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                            .addComponent(jFormattedTextFieldTelefone02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(108, 108, 108)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel10)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(jButtonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonCriaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(271, 271, 271))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextFieldNomeRua, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldNomeBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextFieldNomeRuaCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jFormattedTextFieldNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jTextFieldCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel10)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBoxFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(69, 69, 69)))
-                        .addComponent(jButtonCriaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(jFormattedTextFieldTelefone01, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jFormattedTextFieldTelefone02, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addGap(251, 251, 251))))
-        );
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(11, 18, 760, 504);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(54, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        setSize(new java.awt.Dimension(786, 566));
+        setSize(new java.awt.Dimension(797, 566));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -389,6 +311,10 @@ public class FormEntradaFuncionario extends javax.swing.JFrame {
             novoLogin.setResizable(false);
         }
     }//GEN-LAST:event_jButtonCriaLoginActionPerformed
+
+    private void jFormattedTextFieldTelefone02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldTelefone02ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldTelefone02ActionPerformed
 
     /**
      * @param args the command line arguments

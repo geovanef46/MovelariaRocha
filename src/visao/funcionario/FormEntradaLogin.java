@@ -163,8 +163,8 @@ public class FormEntradaLogin extends javax.swing.JFrame {
     }
     
     private void jButtonCriaLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCriaLoginActionPerformed
-//         model.setLogin(jTextFieldLogin.getText());
-//         model.setSenha(String.valueOf(jPasswordFieldSenha.getPassword()));
+         model.setNomeUsuario(jTextFieldLogin.getText());
+         model.setSenhaUsuario(String.valueOf(jPasswordFieldSenha.getPassword()));
          dispose();
          
     }//GEN-LAST:event_jButtonCriaLoginActionPerformed

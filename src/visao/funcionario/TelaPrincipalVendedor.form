@@ -101,9 +101,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="14" style="1"/>
         </Property>
-        <Property name="frameIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="0" name="null"/>
-        </Property>
         <Property name="icon" type="boolean" value="true"/>
         <Property name="selected" type="boolean" value="true"/>
         <Property name="visible" type="boolean" value="true"/>
@@ -219,7 +216,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="20" y="60" width="180" height="80"/>
+                      <AbsoluteConstraints x="50" y="30" width="180" height="80"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -239,7 +236,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="20" y="220" width="180" height="80"/>
+                      <AbsoluteConstraints x="50" y="220" width="180" height="80"/>
                     </Constraint>
                   </Constraints>
                 </Component>

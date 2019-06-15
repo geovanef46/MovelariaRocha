@@ -193,11 +193,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(jInternalFrameBemVindo);
         jInternalFrameBemVindo.setBounds(30, 50, 780, 420);
-        try {
-            jInternalFrameBemVindo.setIcon(true);
-        } catch (java.beans.PropertyVetoException e1) {
-            e1.printStackTrace();
-        }
 
         jLabelFundoTelaPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         jLabelFundoTelaPrincipal.setEnabled(false);

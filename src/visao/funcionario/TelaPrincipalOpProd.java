@@ -98,7 +98,6 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
         jInternalFrameBemVindo.setTitle("Bem - Vindo     Operador de Producao");
         jInternalFrameBemVindo.setFocusTraversalPolicyProvider(true);
         jInternalFrameBemVindo.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jInternalFrameBemVindo.setFrameIcon(null);
         try {
             jInternalFrameBemVindo.setSelected(true);
         } catch (java.beans.PropertyVetoException e1) {
@@ -152,7 +151,7 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
         jButtonCadastroFornecedor.setBounds(20, 220, 210, 80);
 
         jPanelInterno.add(jPanel3);
-        jPanel3.setBounds(470, 10, 250, 320);
+        jPanel3.setBounds(440, 10, 250, 320);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
@@ -183,7 +182,7 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
         jButtonNovoMovel.setBounds(20, 220, 210, 80);
 
         jPanelInterno.add(jPanel4);
-        jPanel4.setBounds(30, 10, 250, 320);
+        jPanel4.setBounds(60, 10, 250, 320);
 
         jInternalFrameBemVindo.getContentPane().add(jPanelInterno);
         jPanelInterno.setBounds(10, 40, 750, 340);

@@ -83,7 +83,6 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
         jInternalFrameBemVindo.setTitle("Bem - Vindo      Vendedor");
         jInternalFrameBemVindo.setFocusTraversalPolicyProvider(true);
         jInternalFrameBemVindo.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jInternalFrameBemVindo.setFrameIcon(null);
         try {
             jInternalFrameBemVindo.setSelected(true);
         } catch (java.beans.PropertyVetoException e1) {
@@ -123,7 +122,7 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButtonPesquisar);
-        jButtonPesquisar.setBounds(20, 60, 180, 80);
+        jButtonPesquisar.setBounds(50, 30, 180, 80);
 
         jButtonVender.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonVender.setForeground(new java.awt.Color(5, 5, 19));
@@ -135,7 +134,7 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButtonVender);
-        jButtonVender.setBounds(20, 220, 180, 80);
+        jButtonVender.setBounds(50, 220, 180, 80);
 
         jPanelInterno.add(jPanel3);
         jPanel3.setBounds(10, 10, 280, 320);
