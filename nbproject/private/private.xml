@@ -12,12 +12,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/jason/NetBeansProjects/projetoES_Movelaria/src/modeloDAO/DaoFuncionario.java</file>
-            <file>file:/home/jason/NetBeansProjects/projetoES_Movelaria/src/visao/relatorio/Relatorio.java</file>
-            <file>file:/home/jason/NetBeansProjects/projetoES_Movelaria/src/controle/GerenciadorDeLogin.java</file>
+            <file>file:/home/jason/NetBeansProjects/projetoES_Movelaria/src/visao/cliente/AdicionaCliente.java</file>
+            <file>file:/home/jason/NetBeansProjects/projetoES_Movelaria/src/visao/cliente/AdicionaFornecedor.java</file>
+            <file>file:/home/jason/NetBeansProjects/projetoES_Movelaria/src/visao/cliente/FormEntradaEmpresa.java</file>
             <file>file:/home/jason/NetBeansProjects/projetoES_Movelaria/src/controle/README.md</file>
-            <file>file:/home/jason/NetBeansProjects/projetoES_Movelaria/src/modeloDAO/DaoLogin.java</file>
-            <file>file:/home/jason/NetBeansProjects/projetoES_Movelaria/src/visao/relatorio/GerarRelatorio.java</file>
+            <file>file:/home/jason/NetBeansProjects/projetoES_Movelaria/src/visao/TelaPrincipal.java</file>
         </group>
     </open-files>
 </project-private>
