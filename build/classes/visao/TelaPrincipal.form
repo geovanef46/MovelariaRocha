@@ -11,7 +11,8 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemNovoProduto">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Novo Produto"/>
+                <Property name="text" type="java.lang.String" value="Novo Funcionario"/>
+                <Property name="toolTipText" type="java.lang.String" value="Cadastrar um novo Funcionario"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemNovoProdutoActionPerformed"/>
@@ -20,6 +21,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemPesquisar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Pesquisar"/>
+                <Property name="toolTipText" type="java.lang.String" value="Pesquisar Funcionarios"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemPesquisarActionPerformed"/>
@@ -194,13 +196,14 @@
                       <Color blue="13" green="5" red="5" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Pesquisar"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Pesquisar funcionarios"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPesquisarFuncionarioActionPerformed"/>
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="60" y="240" width="130" height="50"/>
+                      <AbsoluteConstraints x="50" y="240" width="160" height="60"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -229,13 +232,14 @@
                       <Color blue="13" green="5" red="5" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Novo"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Adicione um novo Funcionario"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonNovoFuncionarioActionPerformed"/>
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="60" y="60" width="130" height="50"/>
+                      <AbsoluteConstraints x="50" y="50" width="160" height="60"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -308,13 +312,14 @@
                       <Color blue="13" green="5" red="5" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Gerar"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Gerar Relatorios"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonGerarRelatorioActionPerformed"/>
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="70" y="240" width="120" height="50"/>
+                      <AbsoluteConstraints x="50" y="240" width="160" height="60"/>
                     </Constraint>
                   </Constraints>
                 </Component>

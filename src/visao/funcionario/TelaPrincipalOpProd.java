@@ -117,7 +117,7 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
         jButtonPesquisarMP.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonPesquisarMP.setForeground(new java.awt.Color(5, 5, 19));
         jButtonPesquisarMP.setText("Pesquisar M. Prima");
-        jButtonPesquisarMP.setToolTipText("Pesquisar um produto");
+        jButtonPesquisarMP.setToolTipText("Pesquisar uma materia-prima");
         jButtonPesquisarMP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonPesquisarMPActionPerformed(evt);
@@ -129,7 +129,7 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
         jButtonReceberMP.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonReceberMP.setForeground(new java.awt.Color(5, 5, 19));
         jButtonReceberMP.setText("Receber M. Prima");
-        jButtonReceberMP.setToolTipText("Pesquisar um produto");
+        jButtonReceberMP.setToolTipText("Receber uma material, receber uma encomenda.");
         jButtonReceberMP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonReceberMPActionPerformed(evt);
@@ -141,7 +141,7 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
         jButtonCadastroFornecedor.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonCadastroFornecedor.setForeground(new java.awt.Color(5, 5, 19));
         jButtonCadastroFornecedor.setText("Cadastrar Fornecedor");
-        jButtonCadastroFornecedor.setToolTipText("Pesquisar um produto");
+        jButtonCadastroFornecedor.setToolTipText("Cadastrar um Fornecedor de Materia-prima");
         jButtonCadastroFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCadastroFornecedorActionPerformed(evt);
@@ -160,7 +160,7 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
         jButtonPesquisarMovel.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonPesquisarMovel.setForeground(new java.awt.Color(5, 5, 19));
         jButtonPesquisarMovel.setText("Pesquisar Movel");
-        jButtonPesquisarMovel.setToolTipText("Pesquisar um produto");
+        jButtonPesquisarMovel.setToolTipText("Pesquisar um Movel");
         jButtonPesquisarMovel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonPesquisarMovelActionPerformed(evt);
@@ -172,7 +172,7 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
         jButtonNovoMovel.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonNovoMovel.setForeground(new java.awt.Color(5, 5, 19));
         jButtonNovoMovel.setText("Novo Movel");
-        jButtonNovoMovel.setToolTipText("Pesquisar um produto");
+        jButtonNovoMovel.setToolTipText("Adicione um novo movel");
         jButtonNovoMovel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonNovoMovelActionPerformed(evt);

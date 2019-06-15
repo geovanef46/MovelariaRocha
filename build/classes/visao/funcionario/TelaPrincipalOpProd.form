@@ -168,7 +168,7 @@
                       <Color blue="13" green="5" red="5" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Pesquisar M. Prima"/>
-                    <Property name="toolTipText" type="java.lang.String" value="Pesquisar um produto"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Pesquisar uma materia-prima"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPesquisarMPActionPerformed"/>
@@ -188,7 +188,7 @@
                       <Color blue="13" green="5" red="5" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Receber M. Prima"/>
-                    <Property name="toolTipText" type="java.lang.String" value="Pesquisar um produto"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Receber uma material, receber uma encomenda."/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonReceberMPActionPerformed"/>
@@ -208,7 +208,7 @@
                       <Color blue="13" green="5" red="5" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Cadastrar Fornecedor"/>
-                    <Property name="toolTipText" type="java.lang.String" value="Pesquisar um produto"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Cadastrar um Fornecedor de Materia-prima"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCadastroFornecedorActionPerformed"/>
@@ -253,7 +253,7 @@
                       <Color blue="13" green="5" red="5" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Pesquisar Movel"/>
-                    <Property name="toolTipText" type="java.lang.String" value="Pesquisar um produto"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Pesquisar um Movel"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPesquisarMovelActionPerformed"/>
@@ -273,7 +273,7 @@
                       <Color blue="13" green="5" red="5" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Novo Movel"/>
-                    <Property name="toolTipText" type="java.lang.String" value="Pesquisar um produto"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Adicione um novo movel"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonNovoMovelActionPerformed"/>

@@ -10,8 +10,8 @@ package visao.funcionario;
 //import visao.produto.FormVender;
 import modeloBeans.funcionario.BeansFuncionario;
 import visao.TelaLogin;
-import visao.producao.PesquisaMovel;
 import visao.vendas.FormVender;
+import visao.vendas.PesquisaMovel;
 //import visao.funcionario.FormEntradaFuncionario;
 
 /**
@@ -115,7 +115,7 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
         jButtonPesquisar.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonPesquisar.setForeground(new java.awt.Color(5, 5, 19));
         jButtonPesquisar.setText("Pesquisar");
-        jButtonPesquisar.setToolTipText("Pesquisar um produto");
+        jButtonPesquisar.setToolTipText("Pesquisar um Movel para vender");
         jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonPesquisarActionPerformed(evt);
@@ -127,7 +127,7 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
         jButtonVender.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonVender.setForeground(new java.awt.Color(5, 5, 19));
         jButtonVender.setText("Vender");
-        jButtonVender.setToolTipText("Pesquisar um produto");
+        jButtonVender.setToolTipText("Vender um Movel");
         jButtonVender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVenderActionPerformed(evt);
@@ -160,11 +160,11 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
         getContentPane().add(jLabelFundoTelaPrincipal);
         jLabelFundoTelaPrincipal.setBounds(0, 0, 840, 500);
 
-        jLabelUsuario.setText("Bem - Vindo");
+        jLabelUsuario.setText("Conectado como ");
         jLabelUsuario.setToolTipText("Usuário Ativo");
         jLabelUsuario.setEnabled(false);
         getContentPane().add(jLabelUsuario);
-        jLabelUsuario.setBounds(620, 490, 200, 20);
+        jLabelUsuario.setBounds(600, 490, 210, 20);
 
         jMenuIniciar.setText("Iniciar");
         jMenuIniciar.setToolTipText("Encontrar um Móvel");

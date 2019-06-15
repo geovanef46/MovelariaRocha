@@ -123,13 +123,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButtonPesquisarFuncionario.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonPesquisarFuncionario.setForeground(new java.awt.Color(5, 5, 19));
         jButtonPesquisarFuncionario.setText("Pesquisar");
+        jButtonPesquisarFuncionario.setToolTipText("Pesquisar funcionarios");
         jButtonPesquisarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonPesquisarFuncionarioActionPerformed(evt);
             }
         });
         jPanel1.add(jButtonPesquisarFuncionario);
-        jButtonPesquisarFuncionario.setBounds(60, 240, 130, 50);
+        jButtonPesquisarFuncionario.setBounds(50, 240, 160, 60);
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(5, 5, 19));
@@ -140,13 +141,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButtonNovoFuncionario.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonNovoFuncionario.setForeground(new java.awt.Color(5, 5, 19));
         jButtonNovoFuncionario.setText("Novo");
+        jButtonNovoFuncionario.setToolTipText("Adicione um novo Funcionario");
         jButtonNovoFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonNovoFuncionarioActionPerformed(evt);
             }
         });
         jPanel1.add(jButtonNovoFuncionario);
-        jButtonNovoFuncionario.setBounds(60, 60, 130, 50);
+        jButtonNovoFuncionario.setBounds(50, 50, 160, 60);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(5, 5, 19));
@@ -171,13 +173,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButtonGerarRelatorio.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jButtonGerarRelatorio.setForeground(new java.awt.Color(5, 5, 19));
         jButtonGerarRelatorio.setText("Gerar");
+        jButtonGerarRelatorio.setToolTipText("Gerar Relatorios");
         jButtonGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonGerarRelatorioActionPerformed(evt);
             }
         });
         jPanel2.add(jButtonGerarRelatorio);
-        jButtonGerarRelatorio.setBounds(70, 240, 120, 50);
+        jButtonGerarRelatorio.setBounds(50, 240, 160, 60);
 
         jLabel5.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(5, 5, 19));
@@ -207,7 +210,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuIniciar.setText("Iniciar");
 
-        jMenuItemNovoProduto.setText("Novo Produto");
+        jMenuItemNovoProduto.setText("Novo Funcionario");
+        jMenuItemNovoProduto.setToolTipText("Cadastrar um novo Funcionario");
         jMenuItemNovoProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemNovoProdutoActionPerformed(evt);
@@ -216,6 +220,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuIniciar.add(jMenuItemNovoProduto);
 
         jMenuItemPesquisar.setText("Pesquisar");
+        jMenuItemPesquisar.setToolTipText("Pesquisar Funcionarios");
         jMenuItemPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemPesquisarActionPerformed(evt);
@@ -260,32 +265,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuSobreMouseClicked
 
     private void jMenuItemBemVindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBemVindoActionPerformed
-        jInternalFrameBemVindo.setFocusable(true);
+        jInternalFrameBemVindo.requestFocus();
         jInternalFrameBemVindo.setVisible(true);
     }//GEN-LAST:event_jMenuItemBemVindoActionPerformed
 
     private void jMenuItemNovoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNovoProdutoActionPerformed
-//         if (novaEntrada == null) {
-//            novaEntrada = new FormEntradaMovel();
-//            novaEntrada.setVisible(true);
-//            novaEntrada.setResizable(false);
-//        }else{
-//            novaEntrada.setVisible(true);
-//            novaEntrada.setResizable(false);  
-//        }
-
+        if (novoFuncionario == null) {
+            novoFuncionario = new FormEntradaFuncionario();
+            novoFuncionario.setVisible(true);
+            novoFuncionario.setResizable(false);
+        }else{
+            novoFuncionario.setVisible(true);
+            novoFuncionario.setResizable(false);  
+        }
 
     }//GEN-LAST:event_jMenuItemNovoProdutoActionPerformed
 
     private void jMenuItemPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPesquisarActionPerformed
-//        if (novaPesquisa == null) {
-//            novaPesquisa = new PesquisaProduto();
-//            novaPesquisa.setVisible(true);
-//            novaPesquisa.setResizable(false);
-//        }else{
-//            novaPesquisa.setVisible(true);
-//            novaPesquisa.setResizable(false);
-//        }
+       if (novaPesquisaFunc == null) {
+            novaPesquisaFunc = new PesquisaFuncionario();
+            novaPesquisaFunc.setVisible(true);
+            novaPesquisaFunc.setResizable(false);
+        }else{
+            novaPesquisaFunc.setVisible(true);
+            novaPesquisaFunc.setResizable(false);
+        }
     }//GEN-LAST:event_jMenuItemPesquisarActionPerformed
 
     private void jButtonPesquisarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarFuncionarioActionPerformed
