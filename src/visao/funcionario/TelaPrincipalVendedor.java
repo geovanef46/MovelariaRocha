@@ -29,14 +29,15 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
      */
     public TelaPrincipalVendedor() {
         initComponents();
-
+        jInternalFrameBemVindo.requestFocus();
     }
 
     public TelaPrincipalVendedor(BeansFuncionario funcionario ) {
           initComponents();
         //conecta.conexao();
         funcionarioAtivo = funcionario;
-        jLabelUsuario.setText("Bem-Vindo   "+funcionario.getNome());
+        jInternalFrameBemVindo.requestFocus();
+        jLabelUsuario.setText("Conectado como  "+funcionario.getNome());
         
     }
     
@@ -63,12 +64,14 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuIniciar = new javax.swing.JMenu();
         jMenuItemPesquisar = new javax.swing.JMenuItem();
+        jMenuVender = new javax.swing.JMenuItem();
         jMenuRelatorios = new javax.swing.JMenu();
         jMenuFerramentas = new javax.swing.JMenu();
         jMenuItemBemVindo = new javax.swing.JMenuItem();
         jMenuSobre = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("VENDAS");
         setBackground(new java.awt.Color(255, 255, 255));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -88,6 +91,7 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
         } catch (java.beans.PropertyVetoException e1) {
             e1.printStackTrace();
         }
+        jInternalFrameBemVindo.setVerifyInputWhenFocusTarget(false);
         jInternalFrameBemVindo.setVisible(true);
         jInternalFrameBemVindo.getContentPane().setLayout(null);
 
@@ -149,11 +153,6 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
 
         getContentPane().add(jInternalFrameBemVindo);
         jInternalFrameBemVindo.setBounds(30, 50, 780, 420);
-        try {
-            jInternalFrameBemVindo.setIcon(true);
-        } catch (java.beans.PropertyVetoException e1) {
-            e1.printStackTrace();
-        }
 
         jLabelFundoTelaPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         jLabelFundoTelaPrincipal.setEnabled(false);
@@ -164,11 +163,12 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
         jLabelUsuario.setToolTipText("Usuário Ativo");
         jLabelUsuario.setEnabled(false);
         getContentPane().add(jLabelUsuario);
-        jLabelUsuario.setBounds(600, 490, 210, 20);
+        jLabelUsuario.setBounds(490, 490, 320, 20);
 
         jMenuIniciar.setText("Iniciar");
         jMenuIniciar.setToolTipText("Encontrar um Móvel");
 
+        jMenuItemPesquisar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.ALT_MASK));
         jMenuItemPesquisar.setText("Pesquisar");
         jMenuItemPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,6 +177,15 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
         });
         jMenuIniciar.add(jMenuItemPesquisar);
 
+        jMenuVender.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.ALT_MASK));
+        jMenuVender.setText("Vender");
+        jMenuVender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuVenderActionPerformed(evt);
+            }
+        });
+        jMenuIniciar.add(jMenuVender);
+
         jMenuBar1.add(jMenuIniciar);
 
         jMenuRelatorios.setText("Relatórios");
@@ -184,6 +193,7 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
 
         jMenuFerramentas.setText("Ferramentas");
 
+        jMenuItemBemVindo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemBemVindo.setText("Tela Bem-Vindo");
         jMenuItemBemVindo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,19 +219,19 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItemBemVindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBemVindoActionPerformed
-        jInternalFrameBemVindo.setFocusable(true);
+        jInternalFrameBemVindo.requestFocus();
         jInternalFrameBemVindo.setVisible(true);
     }//GEN-LAST:event_jMenuItemBemVindoActionPerformed
 
     private void jMenuItemPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPesquisarActionPerformed
-//        if (novaPesquisa == null) {
-//            novaPesquisa = new PesquisaProduto();
-//            novaPesquisa.setVisible(true);
-//            novaPesquisa.setResizable(false);
-//        }else{
-//            novaPesquisa.setVisible(true);
-//            novaPesquisa.setResizable(false);
-//        }
+        if (novaPesquisa == null) {
+            novaPesquisa = new PesquisaMovel();
+            novaPesquisa.setVisible(true);
+            novaPesquisa.setResizable(false);
+        }else{
+            novaPesquisa.setVisible(true);
+            novaPesquisa.setResizable(false);
+        }
     }//GEN-LAST:event_jMenuItemPesquisarActionPerformed
 
     private void jButtonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVenderActionPerformed
@@ -254,6 +264,17 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_jMenuSobreMouseClicked
+
+    private void jMenuVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuVenderActionPerformed
+         if (novaVenda == null) {
+            novaVenda = new FormVender();
+            novaVenda.setVisible(true);
+            novaVenda.setResizable(false);
+        }else{
+            novaVenda.setVisible(true);
+            novaVenda.setResizable(false);
+        }
+    }//GEN-LAST:event_jMenuVenderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -320,6 +341,7 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemPesquisar;
     private javax.swing.JMenu jMenuRelatorios;
     private javax.swing.JMenu jMenuSobre;
+    private javax.swing.JMenuItem jMenuVender;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanelInterno;

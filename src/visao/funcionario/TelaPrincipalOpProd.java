@@ -5,11 +5,6 @@
  */
 package visao.funcionario;
 
-//import visao.produto.FormEntradaProduto;
-//import visao.produto.PesquisaProduto;
-//import visao.produto.FormVender;
-import controle.GerenciadorDeFuncionario;
-import controle.GerenciadorDeLogin;
 import modeloBeans.funcionario.BeansFuncionario;
 import modeloConection.ConexaoBD;
 import modeloDAO.DaoLogin;
@@ -41,15 +36,15 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
      */
     public TelaPrincipalOpProd() {
         initComponents();
-  
+        jInternalFrameBemVindo.requestFocus();
     }
 
     public TelaPrincipalOpProd(BeansFuncionario funcionario ) {
           initComponents();
 
         this.funcionarioAtivo = funcionario;
-        
-        jLabelUsuario.setText("Bem-Vindo   "+funcionario.getNome());
+        jInternalFrameBemVindo.requestFocus();
+        jLabelUsuario.setText("Conectado como   "+funcionario.getNome());
         
     }
     
@@ -78,12 +73,17 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuIniciar = new javax.swing.JMenu();
         jMenuItemPesquisar = new javax.swing.JMenuItem();
+        jMenuNovoMovel = new javax.swing.JMenuItem();
+        jMenuPesquisaMP = new javax.swing.JMenuItem();
+        jMenuReceberMP = new javax.swing.JMenuItem();
+        jMenuCadastrar = new javax.swing.JMenuItem();
         jMenuRelatorios = new javax.swing.JMenu();
         jMenuFerramentas = new javax.swing.JMenu();
         jMenuItemBemVindo = new javax.swing.JMenuItem();
         jMenuSobre = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("PRODUCAO");
         setBackground(new java.awt.Color(255, 255, 255));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -95,14 +95,16 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
         jInternalFrameBemVindo.setBackground(new java.awt.Color(220, 222, 228));
         jInternalFrameBemVindo.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(240, 240, 240), null));
         jInternalFrameBemVindo.setClosable(true);
-        jInternalFrameBemVindo.setTitle("Bem - Vindo     Operador de Producao");
+        jInternalFrameBemVindo.setTitle("Bem - Vindo   Operador de Producao");
         jInternalFrameBemVindo.setFocusTraversalPolicyProvider(true);
         jInternalFrameBemVindo.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jInternalFrameBemVindo.setNextFocusableComponent(jButtonPesquisarMovel);
         try {
             jInternalFrameBemVindo.setSelected(true);
         } catch (java.beans.PropertyVetoException e1) {
             e1.printStackTrace();
         }
+        jInternalFrameBemVindo.setVerifyInputWhenFocusTarget(false);
         jInternalFrameBemVindo.setVisible(true);
         jInternalFrameBemVindo.getContentPane().setLayout(null);
 
@@ -194,11 +196,6 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
 
         getContentPane().add(jInternalFrameBemVindo);
         jInternalFrameBemVindo.setBounds(30, 50, 780, 420);
-        try {
-            jInternalFrameBemVindo.setIcon(true);
-        } catch (java.beans.PropertyVetoException e1) {
-            e1.printStackTrace();
-        }
 
         jLabelFundoTelaPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         jLabelFundoTelaPrincipal.setEnabled(false);
@@ -209,11 +206,12 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
         jLabelUsuario.setToolTipText("Usuário Ativo");
         jLabelUsuario.setEnabled(false);
         getContentPane().add(jLabelUsuario);
-        jLabelUsuario.setBounds(620, 490, 200, 20);
+        jLabelUsuario.setBounds(510, 490, 300, 20);
 
         jMenuIniciar.setText("Iniciar");
         jMenuIniciar.setToolTipText("Encontrar um Móvel");
 
+        jMenuItemPesquisar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.ALT_MASK));
         jMenuItemPesquisar.setText("Pesquisar");
         jMenuItemPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -222,6 +220,42 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
         });
         jMenuIniciar.add(jMenuItemPesquisar);
 
+        jMenuNovoMovel.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.ALT_MASK));
+        jMenuNovoMovel.setText("Novo Movel");
+        jMenuNovoMovel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuNovoMovelActionPerformed(evt);
+            }
+        });
+        jMenuIniciar.add(jMenuNovoMovel);
+
+        jMenuPesquisaMP.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.ALT_MASK));
+        jMenuPesquisaMP.setText("Pesquisar MP");
+        jMenuPesquisaMP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuPesquisaMPActionPerformed(evt);
+            }
+        });
+        jMenuIniciar.add(jMenuPesquisaMP);
+
+        jMenuReceberMP.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_4, java.awt.event.InputEvent.ALT_MASK));
+        jMenuReceberMP.setText("Receber MP");
+        jMenuReceberMP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuReceberMPActionPerformed(evt);
+            }
+        });
+        jMenuIniciar.add(jMenuReceberMP);
+
+        jMenuCadastrar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_5, java.awt.event.InputEvent.ALT_MASK));
+        jMenuCadastrar.setText("Cadastrar ");
+        jMenuCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuCadastrarActionPerformed(evt);
+            }
+        });
+        jMenuIniciar.add(jMenuCadastrar);
+
         jMenuBar1.add(jMenuIniciar);
 
         jMenuRelatorios.setText("Relatórios");
@@ -229,6 +263,7 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
 
         jMenuFerramentas.setText("Ferramentas");
 
+        jMenuItemBemVindo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemBemVindo.setText("Tela Bem-Vindo");
         jMenuItemBemVindo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -254,12 +289,12 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItemBemVindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBemVindoActionPerformed
-        jInternalFrameBemVindo.setFocusable(true);
+        jInternalFrameBemVindo.requestFocus();
         jInternalFrameBemVindo.setVisible(true);
     }//GEN-LAST:event_jMenuItemBemVindoActionPerformed
 
     private void jMenuItemPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPesquisarActionPerformed
-        if (PesquisaMovel == null) {
+          if (PesquisaMovel == null) {
             PesquisaMovel = new PesquisaMovel();
             PesquisaMovel.setVisible(true);
             PesquisaMovel.setResizable(false);
@@ -333,6 +368,50 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuSobreMouseClicked
 
+    private void jMenuPesquisaMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuPesquisaMPActionPerformed
+        if (PesquisaMP == null) {
+            PesquisaMP = new PesquisaMP();
+            PesquisaMP.setVisible(true);
+            PesquisaMP.setResizable(false);
+        }else{
+            PesquisaMP.setVisible(true);
+            PesquisaMP.setResizable(false);
+        }
+    }//GEN-LAST:event_jMenuPesquisaMPActionPerformed
+
+    private void jMenuNovoMovelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuNovoMovelActionPerformed
+          if (novoMovel == null) {
+            novoMovel = new FormEntradaMovel();
+            novoMovel.setVisible(true);
+            novoMovel.setResizable(false);
+        }else{
+            novoMovel.setVisible(true);
+            novoMovel.setResizable(false);
+        }
+    }//GEN-LAST:event_jMenuNovoMovelActionPerformed
+
+    private void jMenuReceberMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuReceberMPActionPerformed
+          if (novoMP == null) {
+            novoMP = new FormEntradaMP();
+            novoMP.setVisible(true);
+            novoMP.setResizable(false);
+        }else{
+            novoMP.setVisible(true);
+            novoMP.setResizable(false);
+        }
+    }//GEN-LAST:event_jMenuReceberMPActionPerformed
+
+    private void jMenuCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCadastrarActionPerformed
+        if (novaEmpresa == null) {
+            novaEmpresa = new FormEntradaEmpresa();
+            novaEmpresa.setVisible(true);
+            novaEmpresa.setResizable(false);
+        }else{
+            novaEmpresa.setVisible(true);
+            novaEmpresa.setResizable(false);
+        }
+    }//GEN-LAST:event_jMenuCadastrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -379,10 +458,14 @@ public class TelaPrincipalOpProd extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelTituloInterno;
     private javax.swing.JLabel jLabelUsuario;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuCadastrar;
     private javax.swing.JMenu jMenuFerramentas;
     private javax.swing.JMenu jMenuIniciar;
     private javax.swing.JMenuItem jMenuItemBemVindo;
     private javax.swing.JMenuItem jMenuItemPesquisar;
+    private javax.swing.JMenuItem jMenuNovoMovel;
+    private javax.swing.JMenuItem jMenuPesquisaMP;
+    private javax.swing.JMenuItem jMenuReceberMP;
     private javax.swing.JMenu jMenuRelatorios;
     private javax.swing.JMenu jMenuSobre;
     private javax.swing.JPanel jPanel3;

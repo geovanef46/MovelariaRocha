@@ -47,7 +47,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabelFundoLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Login");
+        setTitle("Entrada");
         getContentPane().setLayout(null);
 
         jButtonCancelar.setText("SAIR");

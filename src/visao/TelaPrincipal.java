@@ -41,10 +41,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     public TelaPrincipal(BeansFuncionario funcionario) {
           initComponents();
+          jInternalFrameBemVindo.requestFocus();
           funcionarioAtivo = funcionario;
           //conecta.conexao();
         
-        jLabelUsuario.setText("Bem-Vindo   "+funcionario.GERENTE);
+        jLabelUsuario.setText("Conectado como "+funcionario.GERENTE);
         
     }
     
@@ -99,11 +100,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jInternalFrameBemVindo.setTitle("Bem - Vindo");
         jInternalFrameBemVindo.setFocusTraversalPolicyProvider(true);
         jInternalFrameBemVindo.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jInternalFrameBemVindo.setNextFocusableComponent(jButtonNovoFuncionario);
         try {
             jInternalFrameBemVindo.setSelected(true);
         } catch (java.beans.PropertyVetoException e1) {
             e1.printStackTrace();
         }
+        jInternalFrameBemVindo.setVerifyInputWhenFocusTarget(false);
         jInternalFrameBemVindo.setVisible(true);
         jInternalFrameBemVindo.getContentPane().setLayout(null);
 
@@ -200,16 +203,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelFundoTelaPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         jLabelFundoTelaPrincipal.setEnabled(false);
         getContentPane().add(jLabelFundoTelaPrincipal);
-        jLabelFundoTelaPrincipal.setBounds(20, 10, 800, 500);
+        jLabelFundoTelaPrincipal.setBounds(20, 10, 800, 480);
 
         jLabelUsuario.setText("Bem - Vindo");
         jLabelUsuario.setToolTipText("Usuário Ativo");
         jLabelUsuario.setEnabled(false);
         getContentPane().add(jLabelUsuario);
-        jLabelUsuario.setBounds(620, 490, 200, 20);
+        jLabelUsuario.setBounds(470, 480, 340, 20);
 
         jMenuIniciar.setText("Iniciar");
 
+        jMenuItemNovoProduto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.ALT_MASK));
         jMenuItemNovoProduto.setText("Novo Funcionario");
         jMenuItemNovoProduto.setToolTipText("Cadastrar um novo Funcionario");
         jMenuItemNovoProduto.addActionListener(new java.awt.event.ActionListener() {
@@ -219,6 +223,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenuIniciar.add(jMenuItemNovoProduto);
 
+        jMenuItemPesquisar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.ALT_MASK));
         jMenuItemPesquisar.setText("Pesquisar");
         jMenuItemPesquisar.setToolTipText("Pesquisar Funcionarios");
         jMenuItemPesquisar.addActionListener(new java.awt.event.ActionListener() {
@@ -235,6 +240,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuFerramentas.setText("Ferramentas");
 
+        jMenuItemBemVindo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemBemVindo.setText("Tela Bem-Vindo");
         jMenuItemBemVindo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
