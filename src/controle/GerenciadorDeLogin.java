@@ -31,6 +31,7 @@ public class GerenciadorDeLogin {
     TelaPrincipal telaprincipalAdmin;
     TelaPrincipalOpProd telaprincipalOP;
     TelaPrincipalVendedor telaprincipalVend;
+    private final String senhaTecnico = "senhaTecnico";
 
     
     private GerenciadorDeLogin(){
@@ -133,7 +134,13 @@ public class GerenciadorDeLogin {
 
         return false;
     }
-
+    
+    public boolean validarTecnico(String tecnico){
+        if (this.senhaTecnico.equals(tecnico)) {
+            return true;
+        }
+        return false; 
+    }
     /**
      * Retorna o funcionário que está logado
      * @return the funcionarioAtivo

@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modeloBeans.BeansConfig;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -30,7 +31,7 @@ public class Config {
     private static Config unicaInstancia;
 
     private Config() {
-    lerJson();
+        
     }
    
         /**
@@ -41,6 +42,7 @@ public class Config {
     public static synchronized Config getInstance(){
                if (unicaInstancia == null) {
             unicaInstancia = new Config();
+             
         }
      return unicaInstancia;
     }
@@ -87,17 +89,33 @@ public class Config {
      *
      */
     public BeansConfig usarConfig() throws NullPointerException{
+        lerJson();
         
-        System.out.println("\n Config Padrão= "+ config_json.getJSONObject("config").toString());
-        System.out.println("Ultima Config = "+ config_json.getJSONObject("novaConfig").getString("senha"));
         if(configAtual != null){
        salvarJson();
+        }else{
+            try{
+                configAtual = new BeansConfig();
+         configAtual.setBancoDeDados(config_json.getJSONObject("novaConfig").getString("bd")); 
+         configAtual.setSenha(config_json.getJSONObject("novaConfig").getString("senha"));
+         configAtual.setUsuario(config_json.getJSONObject("novaConfig").getString("usuario"));
+         configAtual.setCaminhoGerado(config_json.getJSONObject("novaConfig").getString("caminho"));
+            }catch(JSONException jex){
+                
+                      configAtual.gerarCaminho();
+                      String str =  "{'senha':'"+configAtual.getSenha()+"','bd':'"+configAtual.getBancoDeDados()+"','usuario':'"+configAtual.getUsuario()+"','caminho':'"+configAtual.getCaminhoGerado()+"'}";
+                      criaNewJson(config_json, str);
+                      salvarJson();
+            }
+         
         }
+        configAtual.gerarCaminho();
        return configAtual;
     }
     
     
     public void recebeDados(BeansConfig config){
+        lerJson();
         String str="";
         try {
               config.gerarCaminho();
@@ -113,7 +131,6 @@ public class Config {
         config_json = criaNewJson(config_json,str);
         configAtual = config;
         
-        System.out.println("Nova Config = "+ config_json.getJSONObject("novaConfig").toString());//JSONObject.toString ////
         
     }
     
@@ -125,7 +142,6 @@ public class Config {
             //Escreve no arquivo conteudo do Objeto JSON
             Bwrite.write(config_json.toString());
             Bwrite.close();
-           JOptionPane.showMessageDialog(null,"Nova Configuracao Salva!");
         } catch (IOException ex) {
             Logger.getLogger(Config.class.getName()).log(Level.SEVERE, null, ex);
         }

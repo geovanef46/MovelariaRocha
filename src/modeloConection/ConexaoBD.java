@@ -5,18 +5,21 @@
  */
 package modeloConection;
 
+import Configura.Config;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import modeloBeans.BeansConfig;
 
 /**
  * Classe que prove a conexão com o Banco de Dados SQL
  *
- * $(caminho) este é o caminho de acesso ao Banco de Dados por padrão $(usuario)
- * este é o usuario para acesso ao BD $(root) esta é a senha de acesso ao BD
+ * $(caminho) este é o caminho de acesso ao Banco de Dados
+ * $(usuario) este é o usuario para acesso ao BD 
+ * $(senha) esta é a senha de acesso  ao BD
  *
  * @author geovanef46
  */
@@ -24,19 +27,31 @@ public class ConexaoBD {
 
     public Statement stm;//responsavel pelas pesquisas
     public ResultSet rs;//guarda o resultado da pesquisa
-    private String driver = "com.mysql.jdbc.Driver";
-    private String caminho = "jdbc:mysql://localhost:3306/movelariaRocha";//
-    private String usuario = "jason";
-    private String senha = "root";
+    private final String driver = "com.mysql.jdbc.Driver";
+    private String caminho;
+    private String usuario;
+    private String senha ;
     public Connection connection;
-
+    private Config configArquivo;
+    
+    private void obterConfig(){
+    configArquivo = Config.getInstance();
+    BeansConfig configAtual = configArquivo.usarConfig();
+        
+    this.caminho = configAtual.getCaminhoGerado();
+    this.senha = configAtual.getSenha();
+    this.usuario = configAtual.getUsuario();
+    }
+    
+    
     public void conexao() {//realiza a conexao com o BD
+        obterConfig();
         System.setProperty("jdbc.Drivers", driver);
         try {
             connection = DriverManager.getConnection(caminho, usuario, senha);
             //JOptionPane.showMessageDialog(null, "conexão efetuada com sucesso!");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "erro ao se conectar com o banco de dados" + "\n erro" + ex);
+            
         }
 
     }
@@ -54,7 +69,7 @@ public class ConexaoBD {
             JOptionPane.showMessageDialog(null, "Erro ao buscar o banco de dados: executaSql()");
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao buscar o banco de dados");
+            
         }
     }
 
@@ -65,7 +80,7 @@ public class ConexaoBD {
         } catch (NullPointerException ne) {
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao desconectar do BD: \n " + ex);
+            
         }
     }
 

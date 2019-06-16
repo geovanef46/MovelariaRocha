@@ -22,6 +22,7 @@ public class TelaConfig extends javax.swing.JFrame {
      */
     public TelaConfig() {
         initComponents();
+        preencheCampos();
     }
 
     /**

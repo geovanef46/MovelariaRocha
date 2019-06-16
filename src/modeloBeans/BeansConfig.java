@@ -14,10 +14,10 @@ public class BeansConfig {
     private String bancoDeDados = "movelariaRocha";
     private String caminhoIP = "localhost";
     private String porta = "3306";
-    private String caminhoGerado = "localhost:3306";
-    private String usuario = "root";
+    private String caminhoGerado = "jdbc:mysql://localhost:3306/";
+    private String usuario = "jason";
     private String senha = "root";
-    private String padrao = "{\"senha\":\"root\",\"bd\":\"movelariaRocha\",\"usuario\":\"root\",\"caminho\":\"localhost:3306\"}";
+    private final String padrao = "{\"senha\":\"root\",\"bd\":\"movelariaRocha\",\"usuario\":\"jason\",\"caminho\":\"localhost:3306\"}";
 
     
     /**
@@ -27,6 +27,11 @@ public class BeansConfig {
         return padrao;
     }
 
+    
+    public void setCaminhoGerado(String caminhoGerado) {
+        this.caminhoGerado = caminhoGerado;
+    }
+    
         
     /**
      * @return the bancoDeDados
@@ -103,7 +108,7 @@ public class BeansConfig {
      */
     public String gerarCaminho() {
         if(!this.caminhoIP.equals("")&&!this.porta.equals("")){
-            this.caminhoGerado = this.caminhoIP+":"+porta;
+            this.caminhoGerado = "jdbc:mysql://"+this.caminhoIP+":"+porta+"/"+this.bancoDeDados;
         }
         return caminhoGerado;
     }

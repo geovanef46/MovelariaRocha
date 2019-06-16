@@ -18,6 +18,7 @@ import modeloBeans.funcionario.BeansFuncionario;
  */
 public class TelaLogin extends javax.swing.JFrame {
     public static JFrame tela;
+    private TelaConfig telaConfig;
     /**
      * Creates new form Tela_Login
      */
@@ -27,7 +28,7 @@ public class TelaLogin extends javax.swing.JFrame {
     
 
     BeansFuncionario newUser= new BeansFuncionario();
-    GerenciadorDeLogin gereciadorLogin;
+
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,6 +45,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jPasswordFieldSenha = new javax.swing.JPasswordField();
         jLabelLogin = new javax.swing.JLabel();
         jTextFieldLogin = new javax.swing.JTextField();
+        jButtonConfig = new javax.swing.JButton();
         jLabelFundoLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -60,6 +62,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jButtonCancelar.setBounds(540, 200, 90, 30);
 
         jButtonAcessar.setText("ACESSAR");
+        jButtonAcessar.setToolTipText("Entrar no sistema");
         jButtonAcessar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAcessarActionPerformed(evt);
@@ -93,6 +96,17 @@ public class TelaLogin extends javax.swing.JFrame {
         getContentPane().add(jTextFieldLogin);
         jTextFieldLogin.setBounds(430, 130, 200, 30);
 
+        jButtonConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/config.png"))); // NOI18N
+        jButtonConfig.setToolTipText("Configurar Servidor");
+        jButtonConfig.setEnabled(false);
+        jButtonConfig.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfigActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonConfig);
+        jButtonConfig.setBounds(630, 280, 40, 40);
+
         jLabelFundoLogin.setToolTipText("");
         jLabelFundoLogin.setName("Login"); // NOI18N
         getContentPane().add(jLabelFundoLogin);
@@ -106,20 +120,34 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldLoginActionPerformed
 
     private void jButtonAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessarActionPerformed
-      if(!campoVazio()){
+      GerenciadorDeLogin gereciadorLogin = GerenciadorDeLogin.getInstance();
+        if(!campoVazio()){
+          
+          jButtonConfig.setEnabled(false);
           newUser.setNomeUsuario(jTextFieldLogin.getText());
           newUser.setSenhaUsuario(String.valueOf(jPasswordFieldSenha.getPassword()));
-          GerenciadorDeLogin gereciadorLogin = GerenciadorDeLogin.getInstance();
+          
           if(gereciadorLogin.fazerLogin(newUser) == true){
             
              dispose();
             
           }else{
+              if (gereciadorLogin.validarTecnico(String.valueOf(jPasswordFieldSenha.getPassword()))) {
+                  jButtonConfig.setEnabled(true);
+              }else{
+                  jButtonConfig.setEnabled(false);
+              }
               
           limparCampos();
           
           }
       }else{
+          
+              if (gereciadorLogin.validarTecnico(String.valueOf(jPasswordFieldSenha.getPassword()))) {
+                  jButtonConfig.setEnabled(true);
+              }else{
+                  jButtonConfig.setEnabled(false);
+              }
           JOptionPane.showMessageDialog(rootPane, "Preencha os campos Nome e Senha Corretamente!");
       }
     }//GEN-LAST:event_jButtonAcessarActionPerformed
@@ -143,6 +171,17 @@ public class TelaLogin extends javax.swing.JFrame {
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButtonCancelarActionPerformed
+
+    private void jButtonConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfigActionPerformed
+        if (telaConfig == null) {
+            telaConfig = new TelaConfig();
+            telaConfig.setResizable(false);
+            telaConfig.setVisible(true);
+        }else{
+            telaConfig.setResizable(false);
+            telaConfig.setVisible(true);
+        }
+    }//GEN-LAST:event_jButtonConfigActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,6 +242,7 @@ public class TelaLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAcessar;
     private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonConfig;
     private javax.swing.JLabel jLabelFundoLogin;
     private javax.swing.JLabel jLabelLogin;
     private javax.swing.JLabel jLabelSenha;

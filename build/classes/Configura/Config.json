@@ -1,1 +1,1 @@
-{"config":{"senha":"root","bd":"movelariaRocha","usuario":"root","caminho":"localhost:3306"}}
+{"novaConfig":{"senha":"root","bd":"movelariaRocha","usuario":"jason","caminho":"jdbc:mysql://localhost:3306/movelariaRocha"}}

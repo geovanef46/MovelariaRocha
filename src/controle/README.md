@@ -43,10 +43,10 @@ Gerenciador de Relatórios
 
 
 
-7 - Módulo de Configuracao;
-mostrar ao iniciar
-Alterar usuario sql
-Alterar caminho do Banco
+7 - Módulo de Configuracao;//OK
+mostrar ao iniciar//OK
+Alterar usuario sql//OK
+Alterar caminho do Banco//OK
 
 
 
