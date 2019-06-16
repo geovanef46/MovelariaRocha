@@ -26,7 +26,7 @@ retirar Vendas da pesquisa, trocar por editar, adequar a funcionalidade//OK
 4 - Módulo Empresa; ok falta restante do crud
 Cliente  
 Fornecedor
-FormEntradaEmpresa -> Falta atualizar a mascara de CNPJ//inviável para a validacao pretendida
+FormEntradaEmpresa -> Falta atualizar a mascara de CNPJ//
 
 
 5 - Módulo Vendas;
@@ -51,7 +51,7 @@ Alterar caminho do Banco
 
 
 8 - Adicionar o Sobre
-9 - inserir funcionalidades dos menus 1 a 1
+9 - inserir funcionalidades dos menus 1 a 1 //OK
 10 - implementar detalhes de moveis, MP, funcionarios
 
 

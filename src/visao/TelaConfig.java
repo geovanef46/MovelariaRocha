@@ -5,12 +5,18 @@
  */
 package visao;
 
+import Configura.Config;
+import javax.swing.JOptionPane;
+import modeloBeans.BeansConfig;
+
 /**
  *
  * @author jason
  */
 public class TelaConfig extends javax.swing.JFrame {
-
+    BeansConfig configAtual = new BeansConfig();
+    Config arquivoConfig = Config.getInstance();
+    
     /**
      * Creates new form TelaConfig
      */
@@ -28,31 +34,298 @@ public class TelaConfig extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jRadioButtonOriginal = new javax.swing.JRadioButton();
+        jRadioButtonPersonalizada = new javax.swing.JRadioButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jTextFieldBD = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextFieldCaminhoIP = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextFieldPorta = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jTextFieldSenha = new javax.swing.JTextField();
+        jTextFieldUsuario = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextFieldBD1 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jTextFieldCaminhoIP1 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jTextFieldPorta1 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jTextFieldUsuario1 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jTextFieldSenha1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Configurar");
+        setTitle("Configuracao");
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                FechouConfig(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jRadioButtonOriginal.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jRadioButtonOriginal.setSelected(true);
+        jRadioButtonOriginal.setText("Original");
+        jRadioButtonOriginal.setToolTipText("Ativar as configuracoes originais");
+        jRadioButtonOriginal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonOriginalActionPerformed(evt);
+            }
+        });
+
+        jRadioButtonPersonalizada.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jRadioButtonPersonalizada.setText("Personalizada");
+        jRadioButtonPersonalizada.setToolTipText("Ativar a configuracao personalizada");
+        jRadioButtonPersonalizada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonPersonalizadaActionPerformed(evt);
+            }
+        });
+
+        jTextFieldBD.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jTextFieldBD.setEnabled(false);
+
+        jLabel2.setText("Banco de Dados:");
+
+        jLabel3.setText("Caminho (IP):");
+
+        jTextFieldCaminhoIP.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jTextFieldCaminhoIP.setEnabled(false);
+
+        jLabel4.setText("Porta:");
+
+        jTextFieldPorta.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jTextFieldPorta.setEnabled(false);
+
+        jLabel5.setText("Usuario:");
+
+        jLabel6.setText("Senha:");
+
+        jTextFieldSenha.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jTextFieldSenha.setEnabled(false);
+
+        jTextFieldUsuario.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jTextFieldUsuario.setEnabled(false);
+
+        jLabel7.setText("Banco de Dados:");
+
+        jTextFieldBD1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jTextFieldBD1.setEnabled(false);
+
+        jLabel8.setText("Caminho (IP):");
+
+        jTextFieldCaminhoIP1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jTextFieldCaminhoIP1.setEnabled(false);
+
+        jLabel9.setText("Porta:");
+
+        jTextFieldPorta1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jTextFieldPorta1.setEnabled(false);
+
+        jLabel10.setText("Usuario:");
+
+        jTextFieldUsuario1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jTextFieldUsuario1.setEnabled(false);
+
+        jLabel11.setText("Senha:");
+
+        jTextFieldSenha1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jTextFieldSenha1.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldBD, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldCaminhoIP, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldPorta, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)))
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldBD1)
+                    .addComponent(jTextFieldCaminhoIP1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldPorta1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldSenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(jRadioButtonOriginal)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jRadioButtonPersonalizada)
+                .addGap(100, 100, 100))
+            .addComponent(jSeparator1)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 346, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButtonOriginal)
+                    .addComponent(jRadioButtonPersonalizada))
+                .addGap(14, 14, 14)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jTextFieldBD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldCaminhoIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jTextFieldPorta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jTextFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jTextFieldBD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldCaminhoIP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(jTextFieldPorta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(jTextFieldUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(jTextFieldSenha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(12, 10, 576, 350);
+        jPanel1.setBounds(10, 30, 760, 350);
 
-        pack();
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(340, 0, 0, 22);
+
+        setSize(new java.awt.Dimension(790, 424));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void FechouConfig(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_FechouConfig
+        guardarConfig();
+        
+    }//GEN-LAST:event_FechouConfig
+
+    private void jRadioButtonOriginalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonOriginalActionPerformed
+        if (jRadioButtonOriginal.isSelected()) {
+            jRadioButtonPersonalizada.setSelected(false);
+            bloqueiaCampos();
+            preencheCampos();
+        }
+    }//GEN-LAST:event_jRadioButtonOriginalActionPerformed
+
+    private void jRadioButtonPersonalizadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonPersonalizadaActionPerformed
+        if (jRadioButtonPersonalizada.isSelected()) {
+            jRadioButtonOriginal.setSelected(false);
+            iniciaCampos();
+        }
+    }//GEN-LAST:event_jRadioButtonPersonalizadaActionPerformed
+
+    
+    private void obterDados(){
+        if(jRadioButtonOriginal.isSelected()){
+            JOptionPane.showMessageDialog(rootPane, "Usando Configuracao Padrao...");
+        }else{  
+            if(!jTextFieldBD1.getText().equals("")||!jTextFieldCaminhoIP1.getText().equals("")||!jTextFieldPorta1.getText().equals("")||!jTextFieldSenha1.getText().equals("")||!jTextFieldUsuario1.getText().equals("")){
+            configAtual.setBancoDeDados(jTextFieldBD1.getText());
+            configAtual.setCaminhoIP(jTextFieldCaminhoIP1.getText());
+            configAtual.setPorta(jTextFieldPorta1.getText());
+            configAtual.setUsuario(jTextFieldUsuario1.getText());
+            configAtual.setSenha(jTextFieldSenha1.getText());
+            }
+        }
+    }
+    
+    private void iniciaCampos(){
+                   
+           jTextFieldBD1.setEnabled(true);
+           jTextFieldCaminhoIP1.setEnabled(true);
+           jTextFieldPorta1.setEnabled(true);
+           jTextFieldSenha1.setEnabled(true);
+           jTextFieldUsuario1.setEnabled(true);
+           
+    }
+    
+    private void bloqueiaCampos(){
+           jTextFieldBD1.setEnabled(false);
+           jTextFieldCaminhoIP1.setEnabled(false);
+           jTextFieldPorta1.setEnabled(false);
+           jTextFieldSenha1.setEnabled(false);
+           jTextFieldUsuario1.setEnabled(false);
+    }
+    
+    private void preencheCampos(){
+        jTextFieldBD.setText(configAtual.getBancoDeDados());
+        jTextFieldSenha.setText(configAtual.getSenha());
+        jTextFieldUsuario.setText(configAtual.getUsuario());
+        jTextFieldCaminhoIP.setText(configAtual.getCaminhoIP());
+        jTextFieldPorta.setText(configAtual.getPorta());
+    }
+    private void guardarConfig(){
+        if (configAtual != null) {
+            obterDados();
+            arquivoConfig.recebeDados(configAtual);
+            arquivoConfig.usarConfig();//salva caso tenha uma configuracao valida
+        }else{
+            configAtual = new BeansConfig();
+            obterDados();
+            arquivoConfig.recebeDados(configAtual);
+            arquivoConfig.usarConfig();//salva caso tenha uma configuracao valida
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -89,6 +362,30 @@ public class TelaConfig extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioButtonOriginal;
+    private javax.swing.JRadioButton jRadioButtonPersonalizada;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField jTextFieldBD;
+    private javax.swing.JTextField jTextFieldBD1;
+    private javax.swing.JTextField jTextFieldCaminhoIP;
+    private javax.swing.JTextField jTextFieldCaminhoIP1;
+    private javax.swing.JTextField jTextFieldPorta;
+    private javax.swing.JTextField jTextFieldPorta1;
+    private javax.swing.JTextField jTextFieldSenha;
+    private javax.swing.JTextField jTextFieldSenha1;
+    private javax.swing.JTextField jTextFieldUsuario;
+    private javax.swing.JTextField jTextFieldUsuario1;
     // End of variables declaration//GEN-END:variables
 }

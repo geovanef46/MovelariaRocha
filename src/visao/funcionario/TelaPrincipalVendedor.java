@@ -37,6 +37,7 @@ public class TelaPrincipalVendedor extends javax.swing.JFrame {
         //conecta.conexao();
         funcionarioAtivo = funcionario;
         jInternalFrameBemVindo.requestFocus();
+        
         jLabelUsuario.setText("Conectado como  "+funcionario.getNome());
         
     }

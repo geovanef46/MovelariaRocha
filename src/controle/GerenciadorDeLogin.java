@@ -5,7 +5,7 @@
  */
 package controle;
 
-import javax.swing.JFrame;
+
 import javax.swing.JOptionPane;
 import modeloBeans.funcionario.BeansFuncionario;
 import modeloBeans.funcionario.BeansGerente;
