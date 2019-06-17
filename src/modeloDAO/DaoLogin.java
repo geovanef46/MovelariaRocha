@@ -82,7 +82,7 @@ public class DaoLogin {
             pst.execute();
             JOptionPane.showMessageDialog(null, "Usuario criado com Sucesso!");
         } catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null, "Erro ao inserir dados de Usuario \n erro:"+ ex);
+             JOptionPane.showMessageDialog(null, "Erro ao inserir dados de Usuario \n erro:");
              
         conex.desconecta();
         return false;
@@ -107,7 +107,7 @@ public class DaoLogin {
             pst.execute();
             JOptionPane.showMessageDialog(null, "Usuario criado com Sucesso!");
         } catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null, "Erro ao inserir dados de Usuario \n erro:"+ ex);
+             JOptionPane.showMessageDialog(null, "Erro ao inserir dados de Usuario \n ");
         conex.desconecta();
         return false;
         }

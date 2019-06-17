@@ -53,6 +53,7 @@ public class TelaLogin extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jButtonCancelar.setText("SAIR");
+        jButtonCancelar.setToolTipText("Sair do sistema");
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarActionPerformed(evt);

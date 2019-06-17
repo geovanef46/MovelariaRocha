@@ -38,7 +38,7 @@ public class DaoItem {
             pst.close();
 
         } catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null, "Erro ao inserir dados do item\n erro:"+ ex);
+             JOptionPane.showMessageDialog(null, "Erro ao inserir dados do item\n erro:");
         }
         
         conex.desconecta();
@@ -60,7 +60,7 @@ public class DaoItem {
             index = conex.rs.getInt("max(codItem)");
             conex.rs.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao recuperar o id do Item \n erro:"+ ex);
+            JOptionPane.showMessageDialog(null, "Erro ao recuperar o id do Item \n erro:");
         }
          
          conex.desconecta();
@@ -80,7 +80,7 @@ public class DaoItem {
                 
                 JOptionPane.showMessageDialog(null, "Dados alterados com sucesso");
                     } catch (SQLException ex) {
-              JOptionPane.showMessageDialog(null, "Erro na alteracao dos dados \n"+ ex.getMessage());
+              JOptionPane.showMessageDialog(null, "Erro na alteracao dos dados \n");
         }
         
         conex.desconecta();

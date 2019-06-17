@@ -492,13 +492,16 @@ public class FormVender extends javax.swing.JFrame {
             modeloItem.setQtd(DaoControl.converterInt(iniciaQtd()));
             modeloItem.setCodProduto(produtoAtivo.getCodigo());
             modeloItem.setValor(DaoControl.converterValores(produtoAtivo.getPreco()));
-            if (produtoAtivo.getQtd() >= modeloItem.getQtd()) {
-                double preco = (DaoControl.converterValores(produtoAtivo.getPreco()) * modeloItem.getQtd());
+            if (produtoAtivo.getQtd() > modeloItem.getQtd()) {
+                double preco = (DaoControl.converterValores(produtoAtivo.getPreco()) * (modeloItem.getQtd()));
                 modeloItem.setValor(preco);
+                
                 atualizaPreco(DaoControl.converterValores(preco));
 
                 listaDeItens.add(modeloItem);
+                produtoAtivo.setQtd(produtoAtivo.getQtd()-modeloItem.getQtd());
             }else{
+                produtoAtivo.setQtd(produtoAtivo.getQtd()-modeloItem.getQtd());
                 atualizaPreco(DaoControl.converterValores(modeloItem.getValor()));
                 listaDeItens.add(modeloItem);
                 JOptionPane.showMessageDialog(rootPane, "Existe "+produtoAtivo.getQtd()+" do item  em estoque!");

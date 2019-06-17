@@ -44,7 +44,7 @@ public class DaoProduto {
 
             JOptionPane.showMessageDialog(null, "Dados inseridos no BD com Sucesso!");
         } catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null, "Erro ao inserir dados do movel\n erro:"+ ex);
+             JOptionPane.showMessageDialog(null, "Erro ao inserir dados do movel\n");
         }
         
         conex.desconecta();
@@ -67,7 +67,7 @@ public class DaoProduto {
 
             JOptionPane.showMessageDialog(null, "Dados inseridos no BD com Sucesso!");
         } catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null, "Erro ao inserir dados da materia prima\n erro:"+ ex);
+             JOptionPane.showMessageDialog(null, "Erro ao inserir dados da materia prima\n ");
         }
         
         conex.desconecta();
@@ -188,7 +188,7 @@ public class DaoProduto {
             modelo.setPreco(converterValores(conex.rs.getDouble("preco")));
             conex.rs.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao selecionar os dados na tabela\n"+ex);
+            JOptionPane.showMessageDialog(null, "Erro ao selecionar os dados na tabela\n");
             return null;
         }
         conex.desconecta();
@@ -215,7 +215,7 @@ public class DaoProduto {
             modelo.setPreco(converterValores(conex.rs.getDouble("preco")));
             conex.rs.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao selecionar os dados na tabela\n"+ex);
+            JOptionPane.showMessageDialog(null, "Erro ao selecionar os dados na tabela\n");
             return null;
         }
         conex.desconecta();
@@ -289,7 +289,7 @@ public class DaoProduto {
                 
                 JOptionPane.showMessageDialog(null, "Dados alterados com sucesso");
                     } catch (SQLException ex) {
-              JOptionPane.showMessageDialog(null, "Erro na alteracao dos dados do movel\n"+ ex.getMessage());
+              JOptionPane.showMessageDialog(null, "Erro na alteracao dos dados do movel\n");
         }
         
         conex.desconecta();
@@ -312,7 +312,7 @@ public class DaoProduto {
                 
                 JOptionPane.showMessageDialog(null, "Dados alterados com sucesso");
                     } catch (SQLException ex) {
-              JOptionPane.showMessageDialog(null, "Erro na alteracao dos dados da materia prima \n"+ ex.getMessage());
+              JOptionPane.showMessageDialog(null, "Erro na alteracao dos dados da materia prima \n");
         }
         
         conex.desconecta();
@@ -365,7 +365,7 @@ public class DaoProduto {
             } while (conex.rs.next());}
           
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null , "Erro ao preencher a tabela!"+ex);
+            JOptionPane.showMessageDialog(null , "Erro ao preencher a tabela!");
             return null;
         }
         conex.desconecta();
@@ -390,7 +390,7 @@ public class DaoProduto {
             } while (conex.rs.next());}
           
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null , "Erro ao preencher a tabela!"+ex);
+            JOptionPane.showMessageDialog(null , "Erro ao preencher a tabela!");
             return null;
         }
         conex.desconecta();

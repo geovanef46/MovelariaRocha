@@ -168,6 +168,7 @@ public class PesquisaMovel extends javax.swing.JFrame {
         jButtonApagar.setEnabled(true);
         jButtonDetalhes1.setEnabled(true);
         jButtonEditar.setEnabled(true);
+        jButtonVender.setEnabled(true);
         String nome_movel = ""+jTablePesquisar.getValueAt(jTablePesquisar.getSelectedRow(), 1);
         modelo = (BeansMovel) DaoControl.selecionaMovel(nome_movel);
     }//GEN-LAST:event_jTablePesquisarMouseClicked

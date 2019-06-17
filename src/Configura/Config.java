@@ -27,7 +27,7 @@ public class Config {
     
     JSONObject config_json;
     BeansConfig configAtual;
-    String patch = "src/Configura/Config.json";
+    String patch = "/Configura/Config.json";
     private static Config unicaInstancia;
 
     private Config() {
@@ -65,7 +65,7 @@ public class Config {
         }
         }else{
             try {
-                JOptionPane.showMessageDialog(null,"Arquivo de inicialização não encontrado!");
+                
                 file.createNewFile();
                   
             } catch (IOException ex) {

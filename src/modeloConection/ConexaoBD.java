@@ -66,7 +66,7 @@ public class ConexaoBD {
             stm = connection.createStatement(rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);
             rs = stm.executeQuery(sql);
         } catch (NullPointerException ne) {
-            JOptionPane.showMessageDialog(null, "Erro ao buscar o banco de dados: executaSql()");
+            
 
         } catch (SQLException ex) {
             

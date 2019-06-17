@@ -58,7 +58,7 @@ public class DaoFuncionario implements Dao {
             pst.close();
             JOptionPane.showMessageDialog(null, "Dados do funcionário inseridos no BD com Sucesso!");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao inserir dados do funcionario \n erro:" + ex);
+            JOptionPane.showMessageDialog(null, "Erro ao inserir dados do funcionario \n");
             return false;
         }
 
@@ -95,7 +95,7 @@ public class DaoFuncionario implements Dao {
             pst.setString(3, modelo.getTipoUsuario());
             pst.execute();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao inserir dados de Usuario \n erro:" + ex);
+            JOptionPane.showMessageDialog(null, "Erro ao inserir dados de Usuario \n");
 
         }
         conex.desconecta();
@@ -238,7 +238,7 @@ public class DaoFuncionario implements Dao {
 
             JOptionPane.showMessageDialog(null, "Dados alterados com sucesso");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro na alteracao dos dados \n" + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro na alteracao dos dados \n");
         }
 
         conex.desconecta();

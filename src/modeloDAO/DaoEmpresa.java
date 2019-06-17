@@ -265,7 +265,7 @@ public class DaoEmpresa {
 
             JOptionPane.showMessageDialog(null, "Dados da empresa alterados com sucesso");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro na alteracao dos dados da empresa \n" + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro na alteracao dos dados da empresa \n");
         }
 
         conex.desconecta();
@@ -330,7 +330,7 @@ public class DaoEmpresa {
                 pst.close();
                 JOptionPane.showMessageDialog(null, "Dados do fornecimento inseridos no BD Compra com Sucesso!");
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Erro ao inserir dados do fornecimento\n erro:" + ex);
+                JOptionPane.showMessageDialog(null, "Erro ao inserir dados do fornecimento\n erro:");
             }
 
         

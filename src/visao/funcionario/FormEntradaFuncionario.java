@@ -177,7 +177,7 @@ public class FormEntradaFuncionario extends javax.swing.JFrame {
         jButtonSalvar.setBounds(620, 430, 109, 53);
 
         jButtonCriaLogin.setFont(new java.awt.Font("DejaVu Serif", 1, 12)); // NOI18N
-        jButtonCriaLogin.setText("Criar Login");
+        jButtonCriaLogin.setText("Permitir Acesso");
         jButtonCriaLogin.setToolTipText("Permitir acesso ao sistema ao funcionário");
         jButtonCriaLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
