@@ -197,7 +197,7 @@ public class DaoProduto {
         
            /**
          * Seleciona um Movel pelo nome
-         * @param nome
+         * @param id
          * @return 
          */
         public BeansProduto selecionaMovel(int id){

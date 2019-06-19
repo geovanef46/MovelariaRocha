@@ -15,9 +15,9 @@ public class BeansConfig {
     private String caminhoIP = "localhost";
     private String porta = "3306";
     private String caminhoGerado = "jdbc:mysql://localhost:3306/";
-    private String usuario = "jason";
+    private String usuario = "root";
     private String senha = "root";
-    private final String padrao = "{\"senha\":\"root\",\"bd\":\"movelariaRocha\",\"usuario\":\"jason\",\"caminho\":\"localhost:3306\"}";
+    private final String padrao = "{\"senha\":\"root\",\"usuario\":\"jason\",\"caminho\":\"jdbc:mysql://localhost:3306/movelariaRocha\"}";
 
     
     /**

@@ -35,12 +35,14 @@ public class ConexaoBD {
     private Config configArquivo;
     
     private void obterConfig(){
+   
     configArquivo = Config.getInstance();
     BeansConfig configAtual = configArquivo.usarConfig();
         
     this.caminho = configAtual.getCaminhoGerado();
     this.senha = configAtual.getSenha();
     this.usuario = configAtual.getUsuario();
+        
     }
     
     

@@ -27,7 +27,8 @@ public class Config {
     
     JSONObject config_json;
     BeansConfig configAtual;
-    String patch = "/Configura/Config.json";
+  //  String patch = "src/Configura/Config.json";
+    String arquivo = "Config.json";
     private static Config unicaInstancia;
 
     private Config() {
@@ -50,13 +51,12 @@ public class Config {
     
     private void lerJson(){
          String strJson = "";
-        File file = new File(patch);
+        File file = new File(arquivo);
         if(file.exists()){
         try {
             BufferedReader fileBR = new BufferedReader(new FileReader(file));
             while (fileBR.ready()) {                
-                strJson += fileBR.readLine();
-                System.out.println(strJson);                                        ////
+                strJson = fileBR.readLine();
             }
             fileBR.close();
             config_json = new JSONObject(strJson.trim());
@@ -79,7 +79,7 @@ public class Config {
         
         JSONObject json= new JSONObject(str);
         newJson
-                .accumulate("novaConfig",json);
+                .put("novaConfig",json);
         return newJson;
     }
     
@@ -96,18 +96,18 @@ public class Config {
         }else{
             try{
                 configAtual = new BeansConfig();
-         configAtual.setBancoDeDados(config_json.getJSONObject("novaConfig").getString("bd")); 
+         
          configAtual.setSenha(config_json.getJSONObject("novaConfig").getString("senha"));
          configAtual.setUsuario(config_json.getJSONObject("novaConfig").getString("usuario"));
          configAtual.setCaminhoGerado(config_json.getJSONObject("novaConfig").getString("caminho"));
             }catch(JSONException jex){
                 
                       configAtual.gerarCaminho();
-                      String str =  "{'senha':'"+configAtual.getSenha()+"','bd':'"+configAtual.getBancoDeDados()+"','usuario':'"+configAtual.getUsuario()+"','caminho':'"+configAtual.getCaminhoGerado()+"'}";
-                      criaNewJson(config_json, str);
+                      String str =  "{'senha':'"+configAtual.getSenha()+"','usuario':'"+configAtual.getUsuario()+"','caminho':'"+configAtual.getCaminhoGerado()+"'}";
+                      config_json = criaNewJson(config_json, str);
                       salvarJson();
             }
-         
+         salvarJson();
         }
         configAtual.gerarCaminho();
        return configAtual;
@@ -119,8 +119,8 @@ public class Config {
         String str="";
         try {
               config.gerarCaminho();
-        str =  "{'senha':'"+config.getSenha()+"','bd':'"+config.getBancoDeDados()+"','usuario':'"+config.getUsuario()+"','caminho':'"+config.getCaminhoGerado()+"'}";
-      
+        str =  "{'senha':'"+config.getSenha()+"','usuario':'"+config.getUsuario()+"','caminho':'"+config.getCaminhoGerado()+"'}";
+             JOptionPane.showMessageDialog(null, "Configuracao realizada com sucesso!");
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Configuracao inválida! Usando Configuracao Padrao...");
             str = config.getPadrao();
@@ -130,6 +130,7 @@ public class Config {
       
         config_json = criaNewJson(config_json,str);
         configAtual = config;
+        salvarJson();
         
         
     }
@@ -138,7 +139,7 @@ public class Config {
      
         try {
                      
-            BufferedWriter Bwrite = new BufferedWriter(new FileWriter(patch));
+            BufferedWriter Bwrite = new BufferedWriter(new FileWriter(arquivo));
             //Escreve no arquivo conteudo do Objeto JSON
             Bwrite.write(config_json.toString());
             Bwrite.close();

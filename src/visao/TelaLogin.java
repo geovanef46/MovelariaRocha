@@ -135,6 +135,7 @@ public class TelaLogin extends javax.swing.JFrame {
           }else{
               if (gereciadorLogin.validarTecnico(String.valueOf(jPasswordFieldSenha.getPassword()))) {
                   jButtonConfig.setEnabled(true);
+                  jPasswordFieldSenha.setText("");
               }else{
                   jButtonConfig.setEnabled(false);
               }
@@ -146,6 +147,7 @@ public class TelaLogin extends javax.swing.JFrame {
           
               if (gereciadorLogin.validarTecnico(String.valueOf(jPasswordFieldSenha.getPassword()))) {
                   jButtonConfig.setEnabled(true);
+                  jPasswordFieldSenha.setText("");
               }else{
                   jButtonConfig.setEnabled(false);
               }
